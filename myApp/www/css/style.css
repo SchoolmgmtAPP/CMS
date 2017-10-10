@@ -1,0 +1,298 @@
+/*homepage*/
+.mainLogo
+{
+	position:absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    top:40%;
+    transform:translateY(-50%);
+    width: 100%;
+    max-width: 200px;
+}
+.home_btns
+{
+	position: absolute;
+	bottom: 0;
+}
+.sign_btn
+{
+	color: #1E307E !important;
+	font-weight: 600;
+}
+/*homepage*/
+/*sidemenu*/
+.leftMenu
+{
+	width: 100%;
+	max-width: 100px;
+}
+.sideLogo
+{
+	max-width: 30px;
+	width: 100%;
+}
+.menuBg
+{
+	background: #FFCD00;
+}
+.menu_title{
+	color:#1E307E;
+}
+
+/*sidemenu*/
+/*dashboard*/
+	/*temp color*/
+	ion-header-bar.bar-stable.bar.bar-header {
+	    background: #1E307E;
+
+	}
+	.title.title-left.header-item
+	{
+		color:#FFCD00;
+	}
+	button.button.button-icon.button-clear.ion-navicon {
+		color:#FFCD00;
+	}
+	button.button.back-button.buttons.button-clear.header-item{
+		color:#FFCD00;
+	}
+	/*temp color*/
+
+.bgcolor{
+	background: #1E307E;
+}
+.rightLogo
+{
+	background: url(img/CMS.png);
+}
+.ContentPad{
+	padding-bottom: 15%;
+}
+.tabsColor
+{
+	background: #1E307E;
+	border:0;
+}
+.ta_itemColor
+{
+	color:#FFCD00;
+}
+.ratingChart
+{
+	width: 100%;
+	position: absolute;
+	top:8%;
+	left: 0;
+}
+.dash_title
+{
+	text-align: center;
+	color:#FFCD00; 
+}
+
+/*dashboard*/
+/*School*/
+.plusIcon
+{
+	color:#FFCD00 !important;
+}
+.schLogo
+{
+	width: 100%;
+	max-width: 80px;
+	position: absolute;
+	top:5%;
+}
+/*School*/
+/*List My School*/
+.divHead
+{
+	background: #FFCD00;
+}
+.sch_subitem a.item-content
+{
+	background: #2E74B5;
+	color: #fff !important;
+}
+/*List My School*/
+
+/*Search School*/
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+/*Search School*/
+/*Issue Notifiaction*/
+.notif_icon{
+	float: left;
+}
+.issList
+{
+	margin-bottom: 0;
+}
+h3.notif_title{
+	margin: 2% 0 2% 12%;
+    font-size: 16px;
+    color: #ffcd00;
+    font-weight: 600;
+}
+h3.notif_issToday{
+	text-align: center;
+	font-size: 16px;
+	padding: 0 2% 0 0;
+	color: #1E307E;
+}
+img.notif_user
+{
+	border: 2px solid #ffcd00;
+    padding: 3px;
+    max-width: 50px;
+    max-height: 50px;
+    top: 0px;
+    right: 16px;
+    float: right;
+    border-radius: 50%;
+    position: relative;
+}
+h3.issHead
+{
+	font-size: 18px;
+    margin: 6% 0 0 3%;
+    color: #ffcd00;
+    font-weight: 600;
+}
+.issItem
+{
+	padding: 16px;
+}
+.solution
+{
+	font-size: 13px;
+	background: #1E307E;
+	color: #fff !important;
+}
+.later
+{
+	font-size: 13px;
+}
+/*Issue Notifiaction*/
+/*List Issue*/
+.issueImg
+{
+	width: 100%;
+	height: 100px;
+}
+.imgCol
+{
+	border:1px solid #1E307E;
+}
+.row.RowSpace
+{
+	margin-top: 5%;
+}
+.issPadd{
+	padding: 0;
+}
+/*List Issue*/
+/*View Issue*/
+.viewissImg
+{
+	width: 100%;
+}
+/*View Issue*/
+/*Identify Concerned*/
+.idenCol
+{
+    border: 2px solid #ffcd00;
+    font-size: 16px;
+}
+.padBottom
+{
+	padding-bottom: 4% !important;
+}
+.idenUl
+{
+	padding: 0 0 0 11%;
+	list-style: disc;
+}
+input.secInput
+{
+	border: 1px solid #ddd;
+	float: right;
+}
+.item-checkbox .checkbox {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    left: 8px;
+    z-index: 3;
+    margin-top: -21px;
+    width: 50% !important;
+}
+input.textBox{
+	float: right;
+    border-bottom: 2px solid #ddd;
+    width: 60px;
+    height: 20px;
+}
+input.textBox:focus{
+	float: right;
+    border-bottom: 1px solid #ffcd00;
+    width: 60px;
+
+}
+input.chbox
+{
+	width: 20px;
+    height: 20px;
+    margin:3px 0 0 0;
+}
+input.chbox:before
+{
+	width: 20px;
+    height: 20px;
+    margin:0px 0 0 2px;
+}
+.checkBox
+{
+	padding-left: 50px !important;
+}
+.photoImg
+{
+	padding: 0 7.4em;
+	height: 100px;
+}
+/*Identify Concerned*/
+/*Registration*/
+.labelColor
+{
+	color: #1E307E;
+}
+.RegLogo
+{
+	width: 100%;
+    max-width: 60px;
+    margin: 0 20%;
+}
+.resetBtn
+{
+	background: #1E307E;
+	color: #fff !important;
+	font-weight: 600;
+}
+/*Registration*/
+/*Reset Password*/
+.sendCode{
+	text-decoration: underline;
+}
+/*Reset Password*/

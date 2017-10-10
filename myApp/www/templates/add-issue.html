@@ -1,0 +1,80 @@
+<ion-view view-title="Add Issue">
+	<ion-content has-footer="true">
+		<div class="list issList">
+  			<div class="item">
+    			<img src="/img/notifyComment.png" class="sideLogo notif_icon"><h3 class="notif_title">Weekday Notifications</h3>
+    			<h3 class="notif_issToday">Have you spotted an issue today?</h3>
+		  	</div>
+		</div>
+		  	<div class="row">
+		  		<div class="col col-75">
+		  		<h3 class="issHead">Add Issue</h3>
+		  		</div>
+		  		<div class="col">
+					<img src="/img/man.png"  class="notif_user">
+		  		</div>
+		  	</div>
+
+		  	<div class="list">
+				<label class="item item-input item-floating-label">
+				    <span class="input-label">School Name</span>
+				    <input type="text" placeholder="School Name">
+				</label>
+				<label class="item item-input item-floating-label">
+				    <span class="input-label">Description</span>
+				    <!-- <input type="text" placeholder="School Name"> -->
+				    <textarea placeholder="Description"></textarea>
+				</label>
+				<label class="item item-input item-floating-label">
+				    <span class="input-label">Service Category</span>
+				    <input type="text" placeholder="Service Category">
+				</label>
+				<label class="item item-input item-floating-label">
+				    <span class="input-label">Service Item</span>
+				    <input type="text" placeholder="Service Item">
+				</label>
+				<label class="item item-input item-floating-label">
+				    <span class="input-label">Issue Type</span>
+				    <input type="text" placeholder="Issue Type">
+				</label>
+				<label class="item item-input item-floating-label">
+				    <span class="input-label">Mandated Agency</span>
+				    <input type="text" placeholder="Mandated Agency">
+				</label>
+				<label class="item item-input issItem">
+				    <span class="input-label">Take a Picture:</span>
+				    <input type="file">
+				</label>
+			</div>
+			<div class="row">
+			<div class="col">
+				<button class="button button-energized button-block sign_btn">
+			  		Save
+				</button>
+			</div>	
+		</div>
+		<div class="row ContentPad">
+			<div class="col col-50">
+				<button class="button button-block sign_btn solution">
+			  		Start Solution Chaser
+				</button>
+			</div>
+			<div class="col col-50">
+				<button class="button button-energized button-block sign_btn later">
+			  		Later
+				</button>
+			</div>
+		</div>
+	</ion-content>
+	<div class="bar bar-footer tabs tabs-icon-only tabsColor">
+	  	<a class="tab-item ta_itemColor">
+	    	<i class="icon ion-camera"></i>
+	  	</a>
+	  	<a class="tab-item ta_itemColor">
+	    	<i class="icon ion-person-stalker"></i>
+	  	</a>
+	  	<a class="tab-item ta_itemColor">
+	    	<i class="icon ion-ios-people"></i>
+	  	</a>
+	</div>
+</ion-view>
