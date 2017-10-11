@@ -3,10 +3,31 @@
       <button class="button button-icon ion-edit plusIcon"></button>
   	</ion-nav-buttons>
 	<ion-content>
-		<div class="row responsive-sm">
-			<div class="col">
-				<img src="img/user.png">
+		<div class="row responsive-sm noPadding">
+			<div class="col ColMargin">
+				<img src="img/user.png" class="profileImg">
 			</div>
+			<ul class="list">
+    			<label class="item item-input">
+					<span class="input-label">Name</span>
+				    <span>Test Name</span>
+				</label>
+				<label class="item item-input">
+				   <span class="input-label">Email</span>
+				    <span>test@gmail.com</span>
+				</label>
+    		</ul>
 		</div>
 	</ion-content>
+	<div class="bar bar-footer tabs tabs-icon-only tabsColor">
+	  	<a class="tab-item ta_itemColor">
+	    	<i class="icon ion-camera"></i>
+	  	</a>
+	  	<a class="tab-item ta_itemColor">
+	    	<i class="icon ion-person-stalker"></i>
+	  	</a>
+	  	<a class="tab-item ta_itemColor">
+	    	<i class="icon ion-ios-people"></i>
+	  	</a>
+	</div>
 </ion-view>

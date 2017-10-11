@@ -282,7 +282,8 @@ input.chbox:before
 {
 	width: 100%;
     max-width: 60px;
-    margin: 0 20%;
+    margin: 0 auto;
+    display: block;
 }
 .resetBtn
 {
@@ -293,6 +294,38 @@ input.chbox:before
 /*Registration*/
 /*Reset Password*/
 .sendCode{
-	text-decoration: underline;
+	margin: 5% auto 0;
+    display: block;
+    background: #1E307E !important;
 }
 /*Reset Password*/
+/*View Profile*/
+.profileImg
+{   
+	height: 110px;
+    width: 110px;
+    border: 5px inset #1E307E;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+}
+.noPadding
+{
+	padding: 0;
+}
+.ColMargin
+{
+	margin-top:40px;
+	margin-bottom: 40px !important;
+}
+/*View Profile*/
+/*Edit Profile*/
+.cameraImg
+{
+	display: block;
+    margin: -8% 38% 0 auto;
+    background: #ffcd00;
+    border-radius: 50%;
+}
+
+/*Edit Profile*/
