@@ -1,6 +1,7 @@
 <ion-view view-title="Login">
   <ion-content>
-    <div class="row">
+    
+    <div class="row logoLogin">
       <div class="col">
         <img src="img/CMS.png" class="RegLogo">
       </div>
@@ -22,7 +23,7 @@
           </button>
         </div>
         <div class="col col-50">
-          <button class="button button-block resetBtn">
+          <button class="button button-block resetBtn" ui-sref="home">
             Cancel
           </button>
         </div>
@@ -30,15 +31,5 @@
       </div>
     </form>
   </ion-content>
-  <div class="bar bar-footer tabs tabs-icon-only tabsColor">
-      <a class="tab-item ta_itemColor">
-        <i class="icon ion-camera"></i>
-      </a>
-      <a class="tab-item ta_itemColor">
-        <i class="icon ion-person-stalker"></i>
-      </a>
-      <a class="tab-item ta_itemColor">
-        <i class="icon ion-ios-people"></i>
-      </a>
-  </div>
+  
 </ion-modal-view>
