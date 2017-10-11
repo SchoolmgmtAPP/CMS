@@ -166,7 +166,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	    url: '/viewissue',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/viewissue.html'
+	        templateUrl: 'templates/viewissue.html',
+	        controller:'schoolCtrl'
 	      }
 	    }
 	  })
@@ -183,6 +184,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/identifyconcerned.html'
+	      }
+	    }
+	  })
+	.state('app.statementform', {
+	    url: '/statementform',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/statement-form.html'
 	      }
 	    }
 	  })

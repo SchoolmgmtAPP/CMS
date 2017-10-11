@@ -1,5 +1,5 @@
 <ion-view view-title="View Issue">
-	<ion-content has-footer="true">
+	<ion-content scroll="true">
 		<div class="row issPadd">
 	  		<div class="col col-75">
 	  		<h3 class="issHead">School Name</h3>
@@ -36,6 +36,26 @@
 				</button>
 			</div>
 		</div>
+		<div class="row AccPadd">
+    	<div class="col">
+        <ion-list>
+        <div ng-repeat="group2 in groups2">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup2(group2)"
+                    ng-class="{active: isGroupShown2(group2)}">
+              <i class="icon" ng-class="isGroupShown2(group2) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            {{group2.name}} <h2 class="stars">{{group2.stars}}</h2>
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="item in group2.items"
+                    ng-show="isGroupShown2(group2)">
+            {{item.subId}}
+          </ion-item>
+        </div>
+      </ion-list>
+      </div>
+	</div>
 	</ion-content>
 	<div class="bar bar-footer tabs tabs-icon-only tabsColor">
 	  	<a class="tab-item ta_itemColor">

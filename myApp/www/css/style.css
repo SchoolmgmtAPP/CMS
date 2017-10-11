@@ -209,6 +209,15 @@ h3.issHead
 {
 	width: 100%;
 }
+.AccPadd
+{
+	padding-bottom:25%;
+}
+.stars
+{
+	float: right;
+    color: #444;
+}
 /*View Issue*/
 /*Identify Concerned*/
 .idenCol
@@ -268,9 +277,12 @@ input.chbox:before
 	padding-left: 50px !important;
 }
 .photoImg
-{
-	padding: 0 7.4em;
-	height: 100px;
+{   
+	padding: 0 5px;
+    height: 100px;
+    border: 3px inset #1E307E;
+    display: block;
+    margin: 0 auto;
 }
 /*Identify Concerned*/
 /*Registration*/
