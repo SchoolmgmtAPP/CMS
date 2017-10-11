@@ -26,37 +26,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   $stateProvider
 
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
+	    url: '/app',
+	    abstract: true,
+	    templateUrl: 'templates/menu.html',
+	    controller: 'AppCtrl'
+  	})
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-  .state('app.home', {
-    url: '/home',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/home.html'
-      }
-    }
-  })
+  	.state('app.search', {
+    	url: '/search',
+    	views: {
+	      'menuContent': {
+	        templateUrl: 'templates/search.html'
+	      }
+    	}
+  	})
+  	.state('home', {
+    	url: '/home',
+		templateUrl: 'templates/home.html'
+	    
+ 	})
 
-  .state('app.login', {
-    url: '/login',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/login.html'
-      }
-    }
-  })
+	.state('login', {
+	    url: '/login',
+	    templateUrl: 'templates/login.html'	      
+	})
 	.state('app.dashboard', {
 	    url: '/dashboard',
 	    views: {
@@ -81,13 +74,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	      }
 	    }
 	  })
-	.state('app.registration', {
+	.state('registration', {
 	    url: '/registration',
-	    views: {
-	      'menuContent': {
-	        templateUrl: 'templates/registration.html'
-	      }
-	    }
+	    templateUrl: 'templates/registration.html'
+	      
 	  })
 	.state('app.changepassword', {
 	    url: '/changepassword',
@@ -97,21 +87,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	      }
 	    }
 	  })	
-	.state('app.resetpassword', {
+	.state('resetpassword', {
 	    url: '/resetpassword',
-	    views: {
-	      'menuContent': {
-	        templateUrl: 'templates/reset-password.html'
-	      }
-	    }
+	    templateUrl: 'templates/reset-password.html'
+	     
 	  })
-	.state('app.resetchangepassword', {
-	    url: '/resetchangepassword',
-	    views: {
-	      'menuContent': {
-	        templateUrl: 'templates/reset-change-password.html'
-	      }
-	    }
+	.state('resetchangepassword', {
+	    url: '/resetchangepassword',	   
+	    templateUrl: 'templates/reset-change-password.html'
+	     
 	  })
 	.state('app.editprofile', {
 	    url: '/editprofile',
@@ -239,5 +223,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/home');
 });
