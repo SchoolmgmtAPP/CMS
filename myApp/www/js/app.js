@@ -211,6 +211,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	      }
 	    }
 	  })
+	.state('app.reviewinfo', {
+	    url: '/reviewinfo',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/review-information.html'
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {

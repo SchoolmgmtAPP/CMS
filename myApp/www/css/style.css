@@ -402,3 +402,28 @@ input.textBox1{
 color: #fff;
 }
 /*Needed Information*/
+/*access info*/
+.chbkSpace
+{
+	margin-left: 7%;
+    border:0;
+    padding: 5px;
+}
+.chbkacc
+{
+	border:0;
+}
+/*access info*/
+/*review info*/
+.item.reviewque h2 {
+    font-size: 18px;
+    float: left;
+    margin: 6px 0;
+    white-space: normal;
+    width: 81%;
+}
+.reviewqueToggle
+{
+	float: right;
+}
+/*review info*/
