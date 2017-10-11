@@ -49,7 +49,7 @@
           </ion-item>
           <ion-item class="item-accordion"
                     ng-repeat="item in group2.items"
-                    ng-show="isGroupShown2(group2)">
+                    ng-show="isGroupShown2(group2)" ui-sref="{{item.state}}">
             {{item.subId}}
           </ion-item>
         </div>

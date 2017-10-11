@@ -18,17 +18,23 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="">
+        <ion-item menu-close ng-click="" ui-sref="app.schools">
           <img src="/img/checkschool.png" class="sideLogo">
         </ion-item>
-        <ion-item menu-close href="#">
+        <ion-item menu-close href="#" ui-sref="app.listissues">
          <img src="/img/notifyComment.png" class="sideLogo">
         </ion-item>
-        <ion-item menu-close href="#">
+        <ion-item menu-close href="#" ui-sref="app.searchschool">
           <img src="/img/search.png" class="sideLogo">
         </ion-item>
-        <ion-item menu-close href="#">
+        <ion-item menu-close href="#" ui-sref="app.ratings">
           <img src="/img/star.png" class="sideLogo">
+        </ion-item>
+        <ion-item menu-close href="#" ui-sref="app.viewissue">
+          <img src="/img/menu.png" class="sideLogo">
+        </ion-item>
+         <ion-item menu-close href="#" ui-sref="app.home">
+          <img src="/img/logout.png" class="sideLogo">
         </ion-item>
       </ion-list>
     </ion-content>

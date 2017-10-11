@@ -90,7 +90,17 @@
 	text-align: center;
 	color:#FFCD00; 
 }
-
+img.notif_user1 {
+    border: 2px solid #ffcd00;
+    padding: 3px;
+    max-width: 50px;
+    max-height: 35px;
+    top: -1px;
+    right: 0;
+    float: right;
+    border-radius: 50%;
+    position: relative;
+}
 /*dashboard*/
 /*School*/
 .plusIcon
@@ -305,7 +315,7 @@ input.textBox1{
 .RegLogo
 {
 	width: 100%;
-    max-width: 60px;
+    max-width: 100px;
     margin: 0 auto;
     display: block;
 }
@@ -375,3 +385,20 @@ input.textBox1{
     color: #1E307E;
 }
 /*Cooperation Form*/
+/*Needed Information*/
+.item-bgcolor
+{
+	background: #1E307E;
+	border-color: #1E307E;
+	color: #fff ;
+}
+
+.item-select.item-bgcolor select {
+    background: #1E307E;
+    color: #fff;
+}
+.item-select.item-bgcolor:after, .item-select.item-bgcolor .input-label
+{
+color: #fff;
+}
+/*Needed Information*/

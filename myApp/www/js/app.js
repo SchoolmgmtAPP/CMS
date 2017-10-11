@@ -211,6 +211,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	      }
 	    }
 	  })
+	.state('app.neededinfo', {
+	    url: '/neededinfo',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/needed-info.html'
+	      }
+	    }
+	  })
+	.state('app.accessidentifiedinfo', {
+	    url: '/accessidentifiedinfo',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/access-identified-info.html'
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {
