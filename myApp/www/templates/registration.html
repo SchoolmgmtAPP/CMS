@@ -3,7 +3,7 @@
         <button ng-click="toggleLeft()" class="button button-icon profile-icon" ui-sref="app.home"><i class="ion-android-arrow-back"></i></button> 
  </ion-nav-buttons> -->
 	<ion-content>
-		<div class="row">
+		<div class="row logoRegister">
 			<div class="col">
 				<img src="img/CMS.png" class="RegLogo">
 			</div>
@@ -34,22 +34,12 @@
 					</button>
 				</div>
 				<div class="col col-50">
-					<button class="button button-block resetBtn">
-						Reset
+					<button class="button button-block resetBtn" ui-sref="home">
+						Cancel
 					</button>
 				</div>
 			</div>
 		</form>
 	</ion-content>
-	<div class="bar bar-footer tabs tabs-icon-only tabsColor">
-	  	<a class="tab-item ta_itemColor">
-	    	<i class="icon ion-camera"></i>
-	  	</a>
-	  	<a class="tab-item ta_itemColor">
-	    	<i class="icon ion-person-stalker"></i>
-	  	</a>
-	  	<a class="tab-item ta_itemColor">
-	    	<i class="icon ion-ios-people"></i>
-	  	</a>
-	</div>
+	
 </ion-view>
