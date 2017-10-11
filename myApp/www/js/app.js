@@ -195,6 +195,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	      }
 	    }
 	  })
+	.state('app.confirmissue', {
+	    url: '/confirmissue',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/head-confirm-issue.html'
+	      }
+	    }
+	  })
+	.state('app.cooperationform', {
+	    url: '/cooperationform',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/cooperationform.html'
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {

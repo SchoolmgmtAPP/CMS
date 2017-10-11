@@ -285,6 +285,18 @@ input.chbox:before
     margin: 0 auto;
 }
 /*Identify Concerned*/
+/* Statement Form*/
+input.textBox1{
+    border-bottom: 2px solid #ddd;
+    width: 100px;
+    height: 20px;
+    float: left;
+    margin: 0 10px 0 0;
+}
+.statefrm{
+	margin:10px auto !important;
+}
+/* Statement Form*/
 /*Registration*/
 .labelColor
 {
@@ -341,3 +353,25 @@ input.chbox:before
 }
 
 /*Edit Profile*/
+/*Cooperation Form*/
+.CoopeImg
+{
+	padding: 10% 0;
+	width: 100%;
+    max-width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+.downloadBtn
+{
+	display: block;
+	margin: 0 auto;
+}
+.PageTitle{
+    text-align: center;
+    margin-bottom: 13%;
+    font-weight: 600;
+    text-decoration: underline;
+    color: #1E307E;
+}
+/*Cooperation Form*/
