@@ -227,6 +227,14 @@ angular.module('cmsapp',[
 	      }
 	    }
 	  })
+	.state('app.analyzeissued', {
+	    url: '/analyzeissued',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/analyze-issued.html'
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {

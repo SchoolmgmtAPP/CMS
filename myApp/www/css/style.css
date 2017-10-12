@@ -442,3 +442,27 @@ color: #fff;
 	float: right;
 }
 /*review info*/
+/*analyze issue*/
+.itemWrap
+{
+	white-space: normal;
+}
+input.sourceTxtbx
+{
+	border-bottom: 2px solid #ddd;
+    margin: 0 10px 0 0;
+    float: right;
+}
+input.sourceTxtbx:focus
+{
+	border-bottom: 1px solid #ffcd00;
+    margin: 0 10px 0 0;
+    float: right;
+}
+input.textBox.souTbx
+{
+	width: 75%;
+	margin: 0 -5% 0 0;
+}
+
+/*analyze issue*/
