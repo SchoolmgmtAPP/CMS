@@ -13,11 +13,18 @@
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
             &nbsp;
             {{group.name}}
+              <label class="toggle toggle-energized manadateToggle">
+                <input type="checkbox">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+              </label>
           </ion-item>
           <ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
             {{item.subId}}
+
           </ion-item>
         </div>
       </ion-list>
@@ -36,6 +43,12 @@
               <i class="icon" ng-class="isGroupShown1(group1) ? 'ion-minus' : 'ion-plus'"></i>
             &nbsp;
             {{group1.name}}
+            <label class="toggle toggle-energized manadateToggle">
+                <input type="checkbox">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+              </label>
           </ion-item>
           <ion-item class="item-accordion"
                     ng-repeat="item in group1.items"

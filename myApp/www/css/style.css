@@ -141,7 +141,11 @@ img.notif_user1 {
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
 }
-
+.manadateToggle
+{
+	float: right;
+	/*height: 20px;*/
+}
 /*Search School*/
 /*Issue Notifiaction*/
 .notif_icon{
