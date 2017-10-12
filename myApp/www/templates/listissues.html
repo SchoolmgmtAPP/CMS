@@ -5,11 +5,15 @@
   	<ion-content>
   		<div class="row issPadd">
 	  		<div class="col">
-	  		<h3 class="issHead">School Name</h3>
+	  		<!-- <h3 class="issHead">School Name</h3> -->
+          <button class="button button-positive" modal-select ng-model="data.schoolid" options="schools" modal-title="Select school">
+              {{data.schoolname}}
+              <div class="option">
+                  {{option.schoolname}}
+              </div>
+          </button>
 	  		</div>
-	  		<!-- <div class="col">
-				<img src="/img/man.png"  class="notif_user">
-	  		</div> -->
+	  		
 		</div>
 		<hr>
   		<div class="row">
@@ -41,15 +45,5 @@
   			</div>
   		</div>
   	</ion-content>
-  	<div class="bar bar-footer tabs tabs-icon-only tabsColor">
-      <a class="tab-item ta_itemColor">
-        <i class="icon ion-camera"></i>
-      </a>
-      <a class="tab-item ta_itemColor">
-        <i class="icon ion-person-stalker"></i>
-      </a>
-      <a class="tab-item ta_itemColor">
-        <i class="icon ion-ios-people"></i>
-      </a>
-    </div>
+
 </ion-view>
