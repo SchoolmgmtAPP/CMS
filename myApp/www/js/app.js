@@ -150,7 +150,7 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/listissues.html',
-	      //  controller:'listIssueCtrl'
+	        controller:'listIssueCtrl'
 	      }
 	    }
 	  })

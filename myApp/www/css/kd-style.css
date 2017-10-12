@@ -13,3 +13,12 @@
 {
 	display: none !important;
 }
+.button-dropdown
+{
+	width: 100%;
+    background: #fff;
+    color: #FFCD00 !important;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
