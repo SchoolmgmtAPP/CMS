@@ -466,3 +466,20 @@ input.textBox.souTbx
 }
 
 /*analyze issue*/
+/*feedback report*/
+.feedPara
+{
+	float: left;
+}
+input.feedText
+{
+	border-bottom: 2px solid #ddd;
+	width: 100px;
+	height: 20px;
+	float: left;
+}
+.unerlined
+{
+	border-bottom:2px solid #ddd;
+}
+/*analyze issue*/

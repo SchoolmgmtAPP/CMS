@@ -1,0 +1,49 @@
+<ion-view view-title="Write Feedback Report">
+	<ion-content>
+		<div class="row responsive-sm ContentPad">
+			<div class="col idenCol">
+				<p class="padBottom">Write report</p>
+				<form ng-submit="">
+					<div class="list">
+					  	<label class="item item-input item-floating-label">
+						    <span class="input-label">Issue of</span>
+						    <input type="text" placeholder="Issue of">
+					  	</label>
+					  	<label class="item item-input item-floating-label">
+						    <span class="input-label">School in</span>
+						    <input type="text" placeholder="School in">
+						</label>
+						<label class="item item-input item-floating-label">
+						    <span class="input-label">Issue has existed for</span>
+						    <input type="text" placeholder="Issue has existed for">
+						</label>
+						<label class="item item-input item-floating-label">
+						    <span class="input-label">Other details</span>
+						    <input type="text" placeholder="Other details">
+						</label>
+						<label class="item item-input item-floating-label">
+						    <span class="input-label">Date</span>
+						    <input type="text" placeholder="Date">
+						</label>
+						<label class="item item-input item-floating-label">
+						    <span class="input-label">Signed</span>
+						    <input type="text" placeholder="Signed">
+						</label>
+					</div>
+				</form>
+				<div class="row">
+					<div class="col col-50">
+						<button class="button button-energized button-block sign_btn">
+					  		Save
+						</button>
+					</div>
+					<div class="col col-50">
+						<button class="button button-block resetBtn" ui-sref="app.previewfeedbackreport">
+					  		Preview
+						</button>
+					</div>
+				</div>	
+			</div>	
+		</div>
+	</ion-content>
+</ion-view>

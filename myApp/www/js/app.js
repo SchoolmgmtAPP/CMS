@@ -235,6 +235,22 @@ angular.module('cmsapp',[
 	      }
 	    }
 	  })
+	.state('app.feedbackreport', {
+	    url: '/feedbackreport',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/feedback-report.html'
+	      }
+	    }
+	  })
+	.state('app.previewfeedbackreport', {
+	    url: '/previewfeedbackreport',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/preview-feedback-report.html'
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {
