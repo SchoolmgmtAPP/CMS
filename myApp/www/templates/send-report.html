@@ -1,0 +1,23 @@
+<ion-view view-title="Send report to school and mandated office.">
+	<ion-content>
+		<div class="row responsive-sm ContentPad">
+			<div class="col idenCol">
+				<p class="padBottom">Send report through:</p>
+				<div class="padBottom">
+					<ion-list>
+						<ion-radio ng-model="choice" ng-value="'Email'">Email</ion-radio>
+						<ion-radio ng-model="choice" ng-value="'Hand-carry'">Hand-carry</ion-radio>
+						<ion-radio ng-model="choice" ng-value="'Other means'">Other means
+						</ion-radio>
+						<label class="item item-input">
+					    	<input type="text" class="sourceTxtbx">
+					  	</label>
+					</ion-list>
+					<button class="button button-energized button-block sign_btn">
+			  		Save
+				</button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

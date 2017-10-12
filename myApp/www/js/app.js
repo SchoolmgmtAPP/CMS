@@ -251,6 +251,22 @@ angular.module('cmsapp',[
 	      }
 	    }
 	  })
+	.state('app.feedbacksupport', {
+	    url: '/feedbacksupport',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/feedback-support.html'
+	      }
+	    }
+	  })
+	.state('app.sendreport', {
+	    url: '/sendreport',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/send-report.html'
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {
