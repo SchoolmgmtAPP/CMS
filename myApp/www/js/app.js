@@ -275,6 +275,54 @@ angular.module('cmsapp',[
 	      }
 	    }
 	  })
+	.state('app.acknowledgeissue', {
+	    url: '/acknowledgeissue',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/acknowledge-issue.html'
+	      }
+	    }
+	  })
+	.state('app.governmentagree', {
+	    url: '/governmentagree',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/government-agree.html'
+	      }
+	    }
+	  })
+	.state('app.shareagreedsolution', {
+	    url: '/shareagreedsolution',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/share-agreed-solution.html'
+	      }
+	    }
+	  })
+	.state('app.followup', {
+	    url: '/followup',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/follow-up.html'
+	      }
+	    }
+	  })
+	.state('app.witnessimplementation', {
+	    url: '/witnessimplementation',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/witness-implementation.html'
+	      }
+	    }
+	  })
+	.state('app.changestory', {
+	    url: '/changestory',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/change-story.html'
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {

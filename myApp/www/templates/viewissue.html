@@ -40,7 +40,7 @@
         <div ng-repeat="group2 in groups2">
           <ion-item class="item-stable"
                     ng-click="toggleGroup2(group2)"
-                    ng-class="{active: isGroupShown2(group2)}">
+                    ng-class="{active: isGroupShown2(group2)}" ui-sref="{{group2.state}}">
               <i class="icon" ng-class="isGroupShown2(group2) ? 'ion-minus' : 'ion-plus'"></i>
             &nbsp;
             {{group2.name}} <h2 class="stars">{{group2.stars}}</h2>

@@ -1,0 +1,39 @@
+<ion-view view-title="Send report to school and mandated office.">
+	<ion-content>
+		<div class="row responsive-sm ContentPad">
+			<div class="col idenCol">
+				<p class="padBottom">Get government office to acknowledge your issue (see template). Or if feedback report has been previously sent, follow up the response to it.</p>
+				<form ng-submit="">
+				<div class="padBottom">
+					<ion-list>
+						<ion-radio ng-model="choice" ng-value="'Email'">Email</ion-radio>
+						<ion-radio ng-model="choice" ng-value="'Hand-carry'">Hand-carry</ion-radio>
+						<ion-radio ng-model="choice" ng-value="'Other means'">Other means
+						</ion-radio>
+					</ion-list>
+				</div>
+					<p class="padBottom">You may ask for opportunity to personally present your issue/s or the feedback report to the identified government office.</p>
+					<p class="padBottom">Note that the government office must explicitly acknowledge the issue. That it exists and they will do something about it.</p>
+					<div class="padBottom">
+					<ion-list>
+						<ion-radio ng-model="choice" ng-value="'Email'">Email</ion-radio>
+						<ion-radio ng-model="choice" ng-value="'Text'">Text</ion-radio>
+						<ion-radio ng-model="choice" ng-value="'Printed letter'">Printed letter
+						</ion-radio>
+						<ion-radio ng-model="choice" ng-value="'Audio recording'">Audio recording
+						</ion-radio>
+						<ion-radio ng-model="choice" ng-value="'Audio recording'">Minutes of meeting
+						</ion-radio>
+					</ion-list>
+					</div>
+					<h4 class="report">Upload copy of acknowledgment message.</h4>
+						<img src="img/report.png" class="photoImg reportImg">
+					<button class="button button-energized button-block sign_btn">
+			  		Save
+				</button>
+				</form>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
