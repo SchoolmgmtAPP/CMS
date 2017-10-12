@@ -483,3 +483,14 @@ input.feedText
 	border-bottom:2px solid #ddd;
 }
 /*analyze issue*/
+/*stamped report*/
+h4.report
+{
+	font-size:16px;
+}
+img.photoImg.reportImg
+{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+/*stamped report*/

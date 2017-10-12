@@ -267,6 +267,14 @@ angular.module('cmsapp',[
 	      }
 	    }
 	  })
+	.state('app.reportstamped', {
+	    url: '/reportstamped',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/report-stamped.html'
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {
