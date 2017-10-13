@@ -538,4 +538,11 @@ img.photoImg.reportImg
     padding: 0 5px;
     margin: auto;
 }
-/**************************************************/
+/*verify code*/
+.verifyLabel
+{
+	text-align: center;
+	padding: 0 20px;
+	font-size:16px;
+	color:#1E307E;
+}

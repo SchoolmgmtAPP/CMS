@@ -1,0 +1,25 @@
+<ion-view view-title="Verify code">
+	<ion-content>
+		<div class="row">
+			<div class="col ColMargin">
+				<img src="img/CMS.png" class="RegLogo">
+			</div>
+		</div>
+		<form ng-submit="">
+		<p class="verifyLabel">Verification code sent to your email address. Please enter in below textbox</p>
+			<div class="list">
+
+				<label class="item item-input item-floating-label">
+				    <span class="input-label labelColor">Verification code</span>
+				    <input type="email" placeholder="Verification code">
+				</label>
+					<button class="button button-positive sendCode" ui-sref="resetchangepassword">
+						Verify Code
+					</button>
+					<button class="button button-clear button-block sign_btn" ui-sref="#">
+			           Not received code? Resend now
+			        </button>
+			</div>
+		</form>
+	</ion-content>	
+</ion-view>

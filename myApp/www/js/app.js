@@ -100,6 +100,11 @@ angular.module('cmsapp',[
 	    templateUrl: 'templates/reset-password.html'
 	     
 	  })
+	.state('verifycode', {
+	    url: '/verifycode',
+	    templateUrl: 'templates/verify-code.html'
+	     
+	  })
 	.state('resetchangepassword', {
 	    url: '/resetchangepassword',	   
 	    templateUrl: 'templates/reset-change-password.html'
