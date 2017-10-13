@@ -24,35 +24,35 @@
 		</div>
 		<div class="row">
 			<div class="col col-50">
-				<button class="button button-block sign_btn solution">
+				<button class="button button-block sign_btn solution" ng-click="startSolutionChaser()">
 			  		Start Solution Chaser
 				</button>
 			</div>
 			<div class="col col-50">
-				<button class="button button-energized button-block sign_btn later" ui-sref="app.listissues">
+				<button class="button button-energized button-block sign_btn later" ui-sref="app.listissues" ui-sref="app.listissues">
 			  		Later
 				</button>
 			</div>
 		</div>
-		<div class="row AccPadd">
-    	<div class="col">
-        <ion-list>
-        <div ng-repeat="group2 in groups2">
-          <ion-item class="item-stable"
-                    ng-click="toggleGroup2(group2)"
-                    ng-class="{active: isGroupShown2(group2)}" ui-sref="{{group2.state}}">
-              <i class="icon" ng-class="isGroupShown2(group2) ? 'ion-minus' : 'ion-plus'"></i>
-            &nbsp;
-            {{group2.name}} <h2 class="stars">{{group2.stars}}</h2>
-          </ion-item>
-          <ion-item class="item-accordion"
-                    ng-repeat="item in group2.items"
-                    ng-show="isGroupShown2(group2)" ui-sref="{{item.state}}">
-            {{item.subId}}
-          </ion-item>
-        </div>
-      </ion-list>
-      </div>
-	</div>
+		<div class="row AccPadd" ng-class="startSC">
+	    	<div class="col">
+		        <ion-list>
+			        <div ng-repeat="group2 in groups2">
+			          <ion-item class="item-stable view-issue-item"
+			                    ng-click="toggleGroup2(group2)"
+			                    ng-class="{active: isGroupShown2(group2)}" ui-sref="{{group2.state}}">
+			              <i class="icon" ng-class="isGroupShown2(group2) ? 'ion-minus' : 'ion-plus'"></i>
+			            &nbsp;
+			            {{group2.name}} <h2 class="stars">{{group2.stars}}</h2>
+			          </ion-item>
+			          <ion-item class="item-accordion"
+			                    ng-repeat="item in group2.items"
+			                    ng-show="isGroupShown2(group2)" ui-sref="{{item.state}}">
+			            {{item.subId}}
+			          </ion-item>
+			        </div>
+		      	</ion-list>
+	      	</div>
+		</div>
 	</ion-content>
 </ion-view>

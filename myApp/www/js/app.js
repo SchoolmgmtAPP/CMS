@@ -10,6 +10,7 @@ angular.module('cmsapp',[
 	'cmsapp.AppCtrl',
 	'cmsapp.schoolCtrl',
 	'cmsapp.listIssueCtrl',
+	'cmsapp.viewIssueCtrl',
 	'plgn.ionic-segment'
 ])
 
@@ -156,7 +157,8 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/listissues.html',
-	        controller:'listIssueCtrl'
+	        controller:'listIssueCtrl',
+	        cache: false
 	      }
 	    }
 	  })
@@ -165,7 +167,8 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/viewissue.html',
-	        controller:'schoolCtrl'
+	        controller:'viewIssueCtrl',
+	        cache: false
 	      }
 	    }
 	  })
@@ -342,7 +345,6 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/collaborations.html',
-	        controller:'schoolCtrl'
 	      }
 	    }
 	  })

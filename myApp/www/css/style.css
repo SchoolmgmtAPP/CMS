@@ -546,3 +546,46 @@ img.photoImg.reportImg
 	font-size:16px;
 	color:#1E307E;
 }
+.view-issue-item .item-content
+{
+	display: inline-block !important;
+    width: 100% !important;
+    padding: 15px !important;
+}
+.bar.bar-stable .title {
+    color: #FFCD00;
+}
+.logoLogin
+{
+	margin-top: 30%;
+}
+.logoRegister
+{
+	margin-top: 10%;
+}
+.back-text
+{
+	display: none !important;
+}
+.button-dropdown
+{
+	width: 100%;
+    background: #fff;
+    color: #FFCD00 !important;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+.startSC
+{
+	display: none;
+}
+.AccPadd .active a
+{
+	background: rgb(255, 201, 0) !important;
+}
+.AccPadd .active
+{
+	background: rgb(255, 201, 0) !important;
+}
+
