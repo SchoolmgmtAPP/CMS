@@ -144,6 +144,15 @@ angular.module('cmsapp',[
 	      }
 	    }
 	  })
+	.state('app.viewmandateanalysis', {
+	    url: '/viewmandateanalysis',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/view-mandate-analysis.html',
+	        controller:'schoolCtrl'
+	      }
+	    }
+	  })
 	.state('app.ratings', {
 	    url: '/ratings',
 	    views: {

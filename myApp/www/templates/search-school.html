@@ -13,18 +13,18 @@
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
             &nbsp;
             {{group.name}}
-              <label class="toggle toggle-energized manadateToggle">
-                <input type="checkbox">
-                 <div class="track">
-                   <div class="handle"></div>
-                 </div>
-              </label>
+              
           </ion-item>
           <ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
             {{item.subId}}
-
+            <label class="toggle toggle-energized manadateToggle">
+                <input type="radio" name="serviceCategory">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+              </label>
           </ion-item>
         </div>
       </ion-list>
@@ -43,24 +43,25 @@
               <i class="icon" ng-class="isGroupShown1(group1) ? 'ion-minus' : 'ion-plus'"></i>
             &nbsp;
             {{group1.name}}
-            <label class="toggle toggle-energized manadateToggle">
-                <input type="checkbox">
-                 <div class="track">
-                   <div class="handle"></div>
-                 </div>
-              </label>
+            
           </ion-item>
           <ion-item class="item-accordion"
                     ng-repeat="item in group1.items"
                     ng-show="isGroupShown1(group1)">
             {{item.subId}}
+            <label class="toggle toggle-energized manadateToggle">
+                <input type="radio" name="issueTyp"e> 
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+              </label>
           </ion-item>
         </div>
       </ion-list>
       </div>
 	</div>
   <div class="row">   
-      <button class="button button-energized button-block sign_btn" ui-sref="app.mandate">
+      <button class="button button-energized button-block sign_btn" ui-sref="app.viewmandateanalysis">
         View Mandate Analysis
       </button>
   </div>

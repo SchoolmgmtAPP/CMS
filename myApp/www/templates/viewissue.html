@@ -1,4 +1,7 @@
 <ion-view view-title="View Issue">
+	<ion-nav-buttons side="right">
+      <button class="button button-icon ion-trash-a plusIcon" ui-sref="app.addissue"></button>
+  	</ion-nav-buttons>
 	<ion-content scroll="true">
 		<div class="row issPadd">
 	  		<div class="col">
@@ -45,7 +48,7 @@
 			            &nbsp;
 			            {{group2.name}} <h2 class="stars">{{group2.stars}}</h2>
 			          </ion-item>
-			          <ion-item class="item-accordion"
+			          <ion-item class="item-accordion borderBlue"
 			                    ng-repeat="item in group2.items"
 			                    ng-show="isGroupShown2(group2)" ng-class="{subactive: isGroupShown2(group2)}" ui-sref="{{item.state}}">
 			            {{item.subId}}
