@@ -33,15 +33,16 @@ ul#ion-segment li {
   border: 1px solid;
   transition: all 100ms linear;
   -webkit-transition: all 100ms linear;
-  line-height: 23px;
-  max-height: 25px;
-  min-height: 25px;
+  line-height: 30px;
+  /*max-height: 25px;
+  min-height: 25px;*/
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   background: none;
   text-align: center;
   cursor: pointer;
+  font-size: 16px;
 }
 ul#ion-segment li:first-of-type {
   margin-right: 0;
