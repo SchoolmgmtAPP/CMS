@@ -9,7 +9,8 @@ angular.module('cmsapp',[
 	'ionic-modal-select',
 	'cmsapp.AppCtrl',
 	'cmsapp.schoolCtrl',
-	'cmsapp.listIssueCtrl'
+	'cmsapp.listIssueCtrl',
+	'plgn.ionic-segment'
 ])
 
 .run(function($ionicPlatform) {
@@ -320,6 +321,23 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/change-story.html'
+	      }
+	    }
+	  })
+	.state('app.invitefriends', {
+	    url: '/invitefriends',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/invite-friends.html'
+	      }
+	    }
+	  })
+	.state('app.collaborations', {
+	    url: '/collaborations',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/collaborations.html',
+	        controller:'schoolCtrl'
 	      }
 	    }
 	  })

@@ -1,0 +1,70 @@
+<ion-view view-title="Collaborations">
+  <ion-segment ng-model="categories" full="true" class="segColl" energized>
+  <ion-segment-button value="collaborated">
+    Collaborated
+  </ion-segment-button>
+  <ion-segment-button value="invited">
+    Invited
+  </ion-segment-button>
+</ion-segment>
+<ion-content class="has-header has-subheader">
+
+  <div ng-switch="categories">
+      <ion-list can-swipe="true" ng-switch-when="collaborated">
+          <ion-item class="sch_subitem frndPadd">
+            <div class="row">
+              <div class="col col-10">
+                <img src="img/user.png" class="colbImg">
+              </div>
+              <div class="col col-80 frndName">
+                <h2>Alica casaligi</h2>
+              </div>
+            </div>
+            <ion-option-button class="button-positive icon ion-chatbubbles"></ion-option-button>
+            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
+          </ion-item>
+          <ion-item class="sch_subitem frndPadd">
+            <div class="row">
+              <div class="col col-10">
+                <img src="img/user.png" class="colbImg">
+              </div>
+              <div class="col col-80 frndName">
+                <h2>Vintic sion</h2>
+              </div>
+            </div>
+            <ion-option-button class="button-positive icon ion-chatbubbles"></ion-option-button>
+            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
+          </ion-item>
+
+        </ion-list>
+        <ion-list can-swipe="true" ng-switch-when="invited">
+          <ion-item class="sch_subitem frndPadd">
+            <div class="row">
+              <div class="col col-10">
+                <img src="img/user.png" class="colbImg">
+              </div>
+              <div class="col col-80 frndName">
+                <h2>Alica</h2>
+              </div>
+            </div>
+            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
+          </ion-item>
+          <ion-item class="sch_subitem frndPadd">
+            <div class="row">
+              <div class="col col-10">
+                <img src="img/user.png" class="colbImg">
+              </div>
+              <div class="col col-80 frndName">
+                <h2>Vintic</h2>
+              </div>
+            </div>
+            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
+          </ion-item> 
+        </ion-list>
+    
+
+  </div>
+</ion-content>
+
+
+</ion-view>
