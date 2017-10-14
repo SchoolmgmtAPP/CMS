@@ -11,7 +11,8 @@ angular.module('cmsapp',[
 	'cmsapp.schoolCtrl',
 	'cmsapp.listIssueCtrl',
 	'cmsapp.viewIssueCtrl',
-	'plgn.ionic-segment'
+	'plgn.ionic-segment',
+	'ionicApp'
 ])
 
 .run(function($ionicPlatform) {
@@ -148,8 +149,23 @@ angular.module('cmsapp',[
 	    url: '/viewmandateanalysis',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/view-mandate-analysis.html',
-	        controller:'schoolCtrl'
+	        templateUrl: 'templates/view-mandate-analysis.html'
+	      }
+	    }
+	  })
+	.state('app.policyquote', {
+	    url: '/policyquote',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/policy-quote.html'
+	      }
+	    }
+	  })
+	.state('app.maseranswer', {
+	    url: '/maseranswer',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/maser-answer.html'
 	      }
 	    }
 	  })
@@ -354,6 +370,14 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/collaborations.html',
+	      }
+	    }
+	  })
+	.state('app.chat', {
+	    url: '/chat',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/chat.html',
 	      }
 	    }
 	  })
