@@ -381,6 +381,14 @@ angular.module('cmsapp',[
 	      }
 	    }
 	  })
+	.state('app.viewchat', {
+	    url: '/viewchat',
+	    views: {
+	      'menuContent': {
+	        templateUrl: 'templates/view-chat.html',
+	      }
+	    }
+	  })
   .state('app.browse', {
       url: '/browse',
       views: {
