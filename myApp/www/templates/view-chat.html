@@ -1,12 +1,14 @@
 <ion-view view-title="Chat">
-    <ion-pane "class="messaging-view">
-    <ion-header-bar class="bar-calm">
-      <h1 class="title">Ioinc Chat</h1>
-    </ion-header-bar>
-
-    <ion-content class="content-stable"
-                 on-swipe-left="hideTime = false"
-                 on-swipe-right="hideTime = true">
+  <ion-pane class="messaging-view">
+    <div class="row chatUser">
+  <div class="col col-10">
+    <img src="img/user.png" class="colbImg">
+  </div>
+  <div class="col col-80 frndName">
+    <h4>Alica casaligi</h4>
+  </div>
+</div>
+    <ion-content class="has-header has-subheader content-stable " on-swipe-left="hideTime = false" on-swipe-right="hideTime = true">
 
       <div ng-repeat="message in messages"
            ng-class="{other: message.userId != myId}"

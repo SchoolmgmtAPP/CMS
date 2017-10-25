@@ -633,3 +633,8 @@ img.photoImg.reportImg
 {
 	bottom: 7%;
 }
+.chatUser{
+	position: relative;
+	top:6%;
+	border-bottom:1px solid #ddd;
+}
