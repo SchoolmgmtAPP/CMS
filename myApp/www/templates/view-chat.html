@@ -8,9 +8,21 @@
     <h4>Alica casaligi</h4>
   </div>
 </div>
-    <ion-content class="has-header has-subheader content-stable " on-swipe-left="hideTime = false" on-swipe-right="hideTime = true">
+    <ion-content class="has-header has-subheader content-stable " on-swipe-left="hideTime = false" on-swipe-right="hideTime = true">  
+      
+      <li style="width:100%;" ng-repeat="message in messages track by $index">
+        <div class="msj-rta macro">
+          <div class="text text-r">
+            <p>{{ message.text }}</p>
+            <p><small>{{message.time}}</small></p>
+          </div>
+          <div class="avatar" style="padding:0px 0px 0px 10px !important">
+            <img class="img-circle" style="width:100%;" src="https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg">
+          </div>
+        </div>
+      </li> 
 
-      <div ng-repeat="message in messages"
+     <!--  <div ng-repeat="message in messages"
            ng-class="{other: message.userId != myId}"
            class="messages">
 
@@ -21,7 +33,7 @@
         <div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
 
 
-      </div>
+      </div> -->
 
     </ion-content>
 

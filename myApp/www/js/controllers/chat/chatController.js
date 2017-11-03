@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic'])
+angular.module('cmsapp.chatCtrl', ['ionic'])
 
 // All this does is allow the message
 // to be sent when you tap return
@@ -41,7 +41,7 @@ angular.module('ionicApp', ['ionic'])
 })
 
 
-.controller('Messages', function($scope, $timeout, $ionicScrollDelegate) {
+.controller('chatCtrl', function($scope, $timeout, $ionicScrollDelegate) {
 
   $scope.hideTime = true;
 
@@ -53,12 +53,17 @@ angular.module('ionicApp', ['ionic'])
 
     var d = new Date();
   d = d.toLocaleTimeString().replace(/:\d+ /, ' ');
-
-    $scope.messages.push({
+  console.log($scope.data.message);
+  if (typeof $scope.data.message != '' && $scope.data.message != undefined) {
+      
+      $scope.messages.push({
       userId: alternate ? '12345' : '54321',
       text: $scope.data.message,
       time: d
     });
+}
+
+    
 
     delete $scope.data.message;
     $ionicScrollDelegate.scrollBottom(true);
