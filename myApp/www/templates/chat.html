@@ -1,14 +1,14 @@
 <ion-view view-title="Chat">
   <ion-segment ng-model="categories" full="true" class="segColl" energized>
   <ion-segment-button value="collaborated">
-    Collaborated
+    Chat
   </ion-segment-button>
   <ion-segment-button value="chat">
-    Chat
+    Collaborated
   </ion-segment-button>
 </ion-segment>
 <ion-content class="has-header has-subheader content-stable" on-swipe-left="hideTime = false"   on-swipe-right="hideTime = true">
-<div class="bar bar-header item-input-inset">
+<div class="bar bar-header item-input-inset sticky">
   <label class="item-input-wrapper">
     <i class="icon ion-ios-search placeholder-icon"></i>
     <input type="search" placeholder="Search">
@@ -20,33 +20,109 @@
   <div ng-switch="categories">
       <ion-list can-swipe="true" ng-switch-when="collaborated">
           <ion-item class="sch_subitem frndPadd">
-            <div class="row">
-              <div class="col col-10">
-                <img src="img/user.png" class="colbImg">
-              </div>
-              <div class="col col-80 frndName">
-                <h2>Alica casaligi</h2>
-              </div>
-            </div>
-            <ion-option-button class="button-positive icon ion-chatbubbles"></ion-option-button>
-          </ion-item>
-          <ion-item class="sch_subitem frndPadd">
-            <div class="row">
-              <div class="col col-10">
-                <img src="img/user.png" class="colbImg">
-              </div>
-              <div class="col col-80 frndName">
-                <h2>Vintic sion</h2>
-              </div>
-            </div>
-            <ion-option-button class="button-positive icon ion-chatbubbles"></ion-option-button>
+            
+            <div class="col-md-4 bg-white ">
+            <!-- =============================================================== -->
+            <!-- member list -->
+            <ul class="friend-list">
+                <li class="active bounceInDown" ng-click="DetailPage()">
+                  <a href="javascript:void(0)" class="clearfix">
+                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                    <div class="friend-name"> 
+                      <strong>John Doe</strong>
+                    </div>
+                    <div class="last-message text-muted">Hello, Are you there?</div>
+                    <small class="time text-muted">Just now</small>
+                    <small class="chat-alert label label-danger">1</small>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="clearfix">
+                    <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
+                    <div class="friend-name"> 
+                      <strong>Jane Doe</strong>
+                    </div>
+                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
+                    <small class="time text-muted">5 mins ago</small>
+                  <small class="chat-alert text-muted"><i class="fa fa-check"></i></small>
+                  </a>
+                </li> 
+                <li>
+                  <a href="#" class="clearfix">
+                    <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle">
+                    <div class="friend-name"> 
+                      <strong>Kate</strong>
+                    </div>
+                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
+                    <small class="time text-muted">Yesterday</small>
+                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
+                  </a>
+                </li>  
+                <li>
+                  <a href="#" class="clearfix">
+                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                    <div class="friend-name"> 
+                      <strong>Kate</strong>
+                    </div>
+                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
+                    <small class="time text-muted">Yesterday</small>
+                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
+                  </a>
+                </li>     
+                <li>
+                  <a href="#" class="clearfix">
+                    <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
+                    <div class="friend-name"> 
+                      <strong>Kate</strong>
+                    </div>
+                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
+                    <small class="time text-muted">Yesterday</small>
+                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
+                  </a>
+                </li>        
+                <li>
+                  <a href="#" class="clearfix">
+                    <img src="https://bootdey.com/img/Content/user_6.jpg" alt="" class="img-circle">
+                    <div class="friend-name"> 
+                      <strong>Kate</strong>
+                    </div>
+                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
+                    <small class="time text-muted">Yesterday</small>
+                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
+                  </a>
+                </li>          
+                <li>
+                  <a href="#" class="clearfix">
+                    <img src="https://bootdey.com/img/Content/user_5.jpg" alt="" class="img-circle">
+                    <div class="friend-name"> 
+                      <strong>Kate</strong>
+                    </div>
+                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
+                    <small class="time text-muted">Yesterday</small>
+                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
+                  </a>
+                </li>
+                <li>
+                    <a href="#" class="clearfix">
+                    <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
+                    <div class="friend-name"> 
+                      <strong>Jane Doe</strong>
+                    </div>
+                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
+                    <small class="time text-muted">5 mins ago</small>
+                  <small class="chat-alert text-muted"><i class="fa fa-check"></i></small>
+                  </a>
+                </li>                 
+            </ul>
+    </div>
+
           </ion-item>
 
         </ion-list>
         <ion-list can-swipe="true" ng-switch-when="chat">
           <ion-item class="sch_subitem frndPadd">
             <div class="row">
-              <div class="col col-10">
+              <div class="">
                 <img src="img/user.png" class="colbImg">
               </div>
               <div class="col col-80 frndName">
@@ -57,7 +133,7 @@
           </ion-item>
           <ion-item class="sch_subitem frndPadd">
             <div class="row">
-              <div class="col col-10">
+              <div class="">
                 <img src="img/user.png" class="colbImg">
               </div>
               <div class="col col-80 frndName">

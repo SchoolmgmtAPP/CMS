@@ -12,8 +12,8 @@ angular.module('cmsapp',[
 	'cmsapp.listIssueCtrl',
 	'cmsapp.viewIssueCtrl',
 	'cmsapp.chatCtrl',
+	'cmsapp.chatMenuCtrl',
 	'plgn.ionic-segment'
-	// 'ionicApp'
 ])
 
 .run(function($ionicPlatform) {
@@ -379,6 +379,8 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/chat.html',
+	        controller : 'chatMenuCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
