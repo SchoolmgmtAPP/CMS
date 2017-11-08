@@ -11,9 +11,13 @@ angular.module('cmsapp',[
 	'cmsapp.schoolCtrl',
 	'cmsapp.listIssueCtrl',
 	'cmsapp.viewIssueCtrl',
+	'cmsapp.addSchoolCtrl',
+	'cmsapp.needInfoCtrl',
+	'ui.bootstrap',
 	'cmsapp.chatCtrl',
 	'cmsapp.chatMenuCtrl',
-	'plgn.ionic-segment'
+	'plgn.ionic-segment',
+	'angucomplete-alt'
 ])
 
 .run(function($ionicPlatform) {
@@ -133,7 +137,9 @@ angular.module('cmsapp',[
 	    url: '/addschool',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/addschool.html'
+	        templateUrl: 'templates/addschool.html',
+	         controller:'addSchoolCtrl',
+	         cache	   : false
 	      }
 	    }
 	  })
@@ -242,7 +248,9 @@ angular.module('cmsapp',[
 	    url: '/neededinfo',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/needed-info.html'
+	        templateUrl: 'templates/needed-info.html',
+	        controller : 'needInfoCtrl',
+	        cache 	   : false
 	      }
 	    }
 	  })

@@ -5,18 +5,34 @@
 			<label class="item item-input item-floating-label">
 			  	<span class="input-label labelColor">School Name</span>
 			  	<input type="text" placeholder="School Name">
+			<!-- <div angucomplete-alt id="txtAutocomplete" placeholder="Type School name name" pause="100"
+                 selected-object="afterSelectedCountry" local-data="Schools" search-fields="SchoolName"
+                 title-field="SchoolName" minlength="1" input-class="form-control" match-class="highlight">
+            	</div> -->
 			</label>
 			<label class="item item-input item-floating-label">
 				<span class="input-label labelColor">Region</span>
-			    <input type="text" placeholder="Region">
+			    <input type="text" placeholder="Region Name">
+			    <!-- <div angucomplete-alt id="txtAutocomplete" placeholder="Type Region name" pause="100"
+                 selected-object="afterSelectedCountry" local-data="Regions" search-fields="RegionName"
+                 title-field="RegionName" minlength="1" input-class="form-control" match-class="highlight">
+            	</div> -->
 			</label>
 		  	<label class="item item-input item-floating-label">
 			    <span class="input-label labelColor">Division</span>
-			    <input type="text" placeholder="Division">
+			    <input type="text" placeholder="Division Name">
+		  	<!-- <div angucomplete-alt id="txtAutocomplete" placeholder="Type Division name" pause="100"
+                 selected-object="afterSelectedCountry" local-data="Divisions" search-fields="DivisionName"
+                 title-field="DivisionName" minlength="1" input-class="form-control" match-class="highlight">
+            	</div> -->
 		  	</label>
 		  	<label class="item item-input item-floating-label">
 			    <span class="input-label labelColor">City/Municipality</span>
-			    <input type="text" placeholder="City/Municipality">
+			    <input type="text" placeholder="City/Municipality Name">
+		  	<!-- <div angucomplete-alt id="txtAutocomplete" placeholder="Type City/Municipality name" pause="100"
+                 selected-object="afterSelectedCountry" local-data="Citys" search-fields="CityName"
+                 title-field="CityName" minlength="1" input-class="form-control" match-class="highlight">
+            	</div> -->
 		  	</label>
 		</div>
 		<div class="row">
@@ -27,5 +43,15 @@
 			</div>
 		</div>
 	</form>	
+            <div ng-show="SelectedCountry">
+                <!-- Selected School : {{SelectedCountry.SchoolName}} -->
+            </div>	
+
+            <style type="text/css">
+            	.angucomplete-dropdown{
+            		position: relative;
+            		/*z-index: 9999;*/
+            	}
+            </style>
 	</ion-content>
 </ion-view>
