@@ -4,21 +4,78 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+
+var mainUrl = 'http://webdemonstration.xyz/cmsapp/api/';
+
 angular.module('cmsapp',[
 	'ionic',
+	'ngCordova',
 	'ionic-modal-select',
+	'ngStorage',
+	'ui.bootstrap',
+	'cmsapp.chatCtrl',
 	'cmsapp.AppCtrl',
 	'cmsapp.schoolCtrl',
 	'cmsapp.listIssueCtrl',
 	'cmsapp.viewIssueCtrl',
 	'cmsapp.addSchoolCtrl',
 	'cmsapp.needInfoCtrl',
-	'ui.bootstrap',
-	'cmsapp.chatCtrl',
 	'cmsapp.chatMenuCtrl',
 	'plgn.ionic-segment',
-	'angucomplete-alt'
+	'angucomplete-alt',
+	'cmsapp.registrationCtrl',
+	'cmsapp.loginservices',
+	'cmsapp.schoolServices',
+	'cmsapp.loginCtrl',
+	'cmsapp.resetpasswordCtrl',
+	'cmsapp.updateProfileCtrl',
+	'cmsapp.addissueCtrl',
+	'cmsapp.issueServices',
+	'cmsapp.profileService'
 ])
+
+.constant('Constants', {
+    // MESSAGES: {
+    //     restrict_page: 'Please login to view the page',
+    // },
+
+    // FACEBOOK: {
+    //     appId: '1525172267556888',
+    //     apiKey: 'AIzaSyBoYVvZbcLpUFSkmXZg1BrCeii2So91dDQ',
+    // },
+
+    // GOOGLE: {
+    //     clientid: '926191138964-dc2lti8m05u8brfm36v5f2lr5htln64h.apps.googleusercontent.com',
+    // },
+
+    // EVENT: {
+    //     pageSize: '9'
+    // },
+
+    API_URL: {
+        login_url				: mainUrl + 'login',
+        register_url			: mainUrl + 'register_user',
+        reset_password_url 		: mainUrl + 'login/reset_password',
+        change_password_url		: mainUrl + 'change_password',
+        verifycode_url			: mainUrl + 'register_user/verify',
+        deleteAccount_url		: mainUrl + 'register_user/delete',
+        addschool_url			: mainUrl + 'school/add_school',
+        getRegions_url			: mainUrl + 'general/get_regions',
+        getDivisons_url			: mainUrl + 'general/get_division',
+        getCities_url			: mainUrl + 'general/get_cities',
+        view_school_url			: mainUrl + 'school/view_school',
+        get_service_category_url: mainUrl + 'general/get_service_category',
+        get_service_item_url	: mainUrl + 'general/get_service_item',
+        get_issue_type_url		: mainUrl + 'general/get_issue_type',
+        add_issue_url			: mainUrl + 'issue/add_issue',
+        get_userProfile_url		: mainUrl + 'login/get_profile',
+        updateprofile_url		: mainUrl + 'login/update_profile'
+    },
+
+    API_HEADERS: {
+        content_type: 'application/x-www-form-urlencoded',
+    }
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -44,7 +101,7 @@ angular.module('cmsapp',[
 	    url: '/app',
 	    abstract: true,
 	    templateUrl: 'templates/menu.html',
-	    //controller: 'AppCtrl'
+	    controller: 'AppCtrl'
   	})
 
   	.state('app.search', {
@@ -63,7 +120,9 @@ angular.module('cmsapp',[
 
 	.state('login', {
 	    url: '/login',
-	    templateUrl: 'templates/login.html'	      
+	    templateUrl: 'templates/login.html',
+	    controller : 'loginCtrl',
+	    cache	   :  false	      
 	})
 	.state('app.dashboard', {
 	    url: '/dashboard',
@@ -91,7 +150,9 @@ angular.module('cmsapp',[
 	  })
 	.state('registration', {
 	    url: '/registration',
-	    templateUrl: 'templates/registration.html'
+	    templateUrl: 'templates/registration.html',
+	    controller : 'registrationCtrl',
+	    cache	   : false
 	      
 	  })
 	.state('app.changepassword', {
@@ -104,24 +165,35 @@ angular.module('cmsapp',[
 	  })	
 	.state('resetpassword', {
 	    url: '/resetpassword',
-	    templateUrl: 'templates/reset-password.html'
+	    templateUrl: 'templates/reset-password.html',
+	    controller : 'resetpasswordCtrl',
+	    cache	   : false
 	     
 	  })
 	.state('verifycode', {
 	    url: '/verifycode',
-	    templateUrl: 'templates/verify-code.html'
+	    templateUrl: 'templates/verify-code.html',
+	    controller : 'resetpasswordCtrl',
+	    cache	   : false
 	     
 	  })
-	.state('resetchangepassword', {
+	.state('app.resetchangepassword', {
 	    url: '/resetchangepassword',	   
-	    templateUrl: 'templates/reset-change-password.html'
-	     
+	    views: {
+	      'menuContent': {
+	    	templateUrl: 'templates/reset-change-password.html',
+	    	controller : 'resetpasswordCtrl',
+	    	cache	   : false
+	     }
+	 	}
 	  })
 	.state('app.editprofile', {
 	    url: '/editprofile',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/edit-profile.html'
+	        templateUrl: 'templates/edit-profile.html',
+	        controller : 'updateProfileCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -129,7 +201,9 @@ angular.module('cmsapp',[
 	    url: '/viewprofile',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/view-profile.html'
+	        templateUrl: 'templates/view-profile.html',
+	        controller : 'updateProfileCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -208,7 +282,9 @@ angular.module('cmsapp',[
 	    url: '/addissue',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/add-issue.html'
+	        templateUrl: 'templates/add-issue.html',
+	        controller : 'addissueCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })

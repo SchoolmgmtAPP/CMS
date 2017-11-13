@@ -1,55 +1,68 @@
 angular.module('cmsapp.addSchoolCtrl', [])
-.factory('RegionsList',function(){
-       var region = [
-        {RegionName:'Alaska'},
-        {RegionName:'Blaska'},
-        {RegionName:'Claska'},
-        {RegionName:'Ana'},
-        {RegionName:'Binna'},
-        {RegionName:'Cinsds'}
-        ];
-  return region;
-})
-.controller('addSchoolCtrl', function($scope, $stateParams,RegionsList) {
+.controller('addSchoolCtrl', function($scope, $stateParams,schoolServices,
+                                    $ionicLoading) {
      $scope.selected = '';
-	   $scope.Regions = RegionsList;
+     $scope.loading = function(){
+      $ionicLoading.show({
+          content: 'Loading',
+          animation: 'fade-in',
+          showBackdrop: true,
+          maxWidth: 200,
+          showDelay: 0
+        });
+    }
+    
+    $scope.loading();
+     schoolServices.getRegions().then(function(response){
+	     $scope.Regions = response.data.response;
+        $ionicLoading.hide();
+     });
      $scope.SelectedCountry = null;
- 
-  var Schools = [
-        {SchoolName:'kjasdf'},
-        {SchoolName:'asjhsdaf'},
-        {SchoolName:'sdalkjdf'},
-        {SchoolName:'sadlkj'},
-        {SchoolName:'dsada'},
-        {SchoolName:'dfsd'}
-        ];
-  var Divisions = [
-        {DivisionName:'Divisions-A'},
-        {DivisionName:'Divisions-B'},
-        {DivisionName:'Divisions-c'},
-        {DivisionName:'Divisions-d'},
-        {DivisionName:'Divisions-e'},
-        {DivisionName:'Divisions-F'}
-        ];
-  var Citys = [
-        {CityName:'City-A'},
-        {CityName:'City-B'},
-        {CityName:'City-C'},
-        {CityName:'City-D'},
-        {CityName:'City-E'},
-        {CityName:'City-F'}
-        ];    
-    $scope.Schools = Schools;
-    $scope.Divisions = Divisions;
-    $scope.Citys = Citys;
-    //After select country event
-    $scope.afterSelectedCountry = function (selected) {
-        if (selected) {
-            $scope.SelectedCountry = selected.originalObject;
+  
+      $scope.addschool = function(form){
+      $scope.submitted= true;
+      if (form.$valid) {
+          var data = {
+            };
+            console.log(data);
+            schoolServices.addschool(data).then(function(response){
+
+            })
         }
     }
-  console.log($scope.School);
-  console.log($scope.Divisions);
-  console.log($scope.Citys);
-  console.log($scope.Regions);
+
+    //After select country event
+    $scope.afterSelectedRegion = function (selected) {
+        if (selected) {
+          $scope.loading();
+            $scope.SelectedRegion = selected.originalObject.region_id;
+            var data = {
+              region_id : $scope.SelectedRegion
+            };
+            schoolServices.getDivisons(data).then(function(response){
+             $scope.Divisions = response.data.response;
+           });
+            $ionicLoading.hide();
+        }
+    }
+
+    //After selected Division
+    $scope.afterSelectedDivision = function (selected) {
+        if (selected) {
+          $scope.loading();
+            $scope.SelectedDivision = selected.originalObject.division_id;
+            var data = {
+              division_id : $scope.SelectedDivision
+            };
+            schoolServices.getCities(data).then(function(response){
+             $scope.Citys = response.data.response;
+           });
+            $ionicLoading.hide();
+        }
+    }
+    $scope.afterSelectedCity = function(selected){
+      if (selected) {
+        $scope.selectedcity = selected.originalObject.city_id;
+      }
+    }
 });

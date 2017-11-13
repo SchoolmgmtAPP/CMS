@@ -5,17 +5,21 @@
 	<ion-content>
 		<div class="row responsive-sm noPadding">
 			<div class="col ColMargin">
-				<img src="img/user.png" class="profileImg">
+				<img src="img/user.png" class="profileImg" ng-if="data.image == ''">
 			</div>
 		</div>
 		<ul class="list">
     			<label class="item item-input">
 					<span class="input-label">Name</span>
-				    <span>Test Name</span>
+				    <span>{{data.name}}</span>
 				</label>
 				<label class="item item-input">
 				   <span class="input-label">Email</span>
-				    <span>test@gmail.com</span>
+				    <span>{{data.email_address}}</span>
+				</label>
+				<label class="item item-input">
+				   <span class="input-label">Contact Number</span>
+				    <span>{{data.contact_number}}</span>
 				</label>
     		</ul>
 	</ion-content>

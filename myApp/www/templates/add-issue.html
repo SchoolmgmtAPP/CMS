@@ -1,54 +1,82 @@
 <ion-view view-title="Add Issue">
 	<ion-content has-footer="true">
 		  	
-		  	<form ng-submit="">
+		  	<form name="addIssueForm">
 		  	<div class="list">
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">School Name</span>
-				    <input type="text" placeholder="School Name">
+				    <div angucomplete-alt id="txtAutocomplete" placeholder="		Type School Name" pause="100"
+	                 selected-object="afterSchool" local-data="SchoolList" search-fields="name"
+	                 title-field="name" minlength="1" input-class="form-control" match-class="highlight" field-required="true" input-name="schoolname">
+            	</div>
+            	<div ng-messages="addIssueForm.schoolname.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
+		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.schoolname.$valid">Please Enter School name</div>
+		        </div>
+
+
 				</label>
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Description</span>
 				    <!-- <input type="text" placeholder="School Name"> -->
-				    <textarea placeholder="Description"></textarea>
+				    <textarea placeholder="Description" ng-model="data.description" name="description" required=""></textarea>
+				
+				<div ng-messages="addIssueForm.description.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
+		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.description.$valid">Please Enter Description</div>
+		        </div>
+
 				</label>
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Service Category</span>
-				    <input type="text" placeholder="Service Category">
+				    <div angucomplete-alt id="txtAutocomplete" placeholder="		Type Service Category" pause="100"
+	                 selected-object="afterCategory" local-data="serviceCategory" search-fields="title"
+	                 title-field="title" minlength="1" input-class="form-control" match-class="highlight" field-required="true" input-name="service_category">
+            	</div>
+            	<div ng-messages="addIssueForm.service_category.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
+		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.service_category.$valid">Please Enter Service Category</div>
+		        </div>
+
 				</label>
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Service Item</span>
-				    <input type="text" placeholder="Service Item">
+				    <!-- <input type="text" placeholder="Service Item"> -->
+				    <div angucomplete-alt id="txtAutocomplete" placeholder="Type Service Item" pause="100"
+                 selected-object="afterServiceItem" local-data="serviceItem" search-fields="title"
+                 title-field="title" minlength="1" input-class="form-control" match-class="highlight" field-required="true" input-name="service_item">
+            	</div>
+            	<div ng-messages="addIssueForm.service_item.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
+		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.service_item.$valid">Please Enter Service Item</div>
+		        </div>
+
 				</label>
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Issue Type</span>
-				    <input type="text" placeholder="Issue Type">
+				    <!-- <input type="text" placeholder="Issue Type"> -->
+				    <div angucomplete-alt id="txtAutocomplete" placeholder="Type Issue Type" pause="100"
+                 selected-object="afterIssueType" local-data="IssueType" search-fields="title"
+                 title-field="title" minlength="1" input-class="form-control" match-class="highlight" field-required="true" input-name="issue_type">
+            	</div>
+            	<div ng-messages="addIssueForm.issue_type.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
+		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.issue_type.$valid">Please Enter Issue Type</div>
+		        </div>
+
 				</label>
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Mandated Agency</span>
-				    <input type="text" placeholder="Mandated Agency">
+				    <input type="text" placeholder="Mandated Agency" name="mandatary_agency" ng-model="data.mandatary_agency" required="">
+			<div ng-messages="addIssueForm.mandatary_agency.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
+		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.mandatary_agency.$valid">Please Enter Mandated Agency</div>
+		        </div>
+
 				</label>
-				<img src="img/photo-camera.png" class="photoImg Pimg">
+				<img src="img/photo-camera.png" class="photoImg Pimg" ng-click="showPopup()">
 			</div>
 			<div class="row">
 			<div class="col">
-				<button class="button button-energized button-block sign_btn" ui-sref="app.listissues">
+				<button class="button button-energized button-block sign_btn" ng-click="addissue(addIssueForm)">
 			  		Save
 				</button>
 			</div>
 		</div>
 		</form>
-		<!-- <div class="row ContentPad">
-			<div class="col col-50">
-				<button class="button button-block sign_btn solution">
-			  		Start Solution Chaser
-				</button>
-			</div>
-			<div class="col col-50">
-				<button class="button button-energized button-block sign_btn later">
-			  		Later
-				</button>
-			</div>
-		</div> -->
 	</ion-content>
 </ion-view>
