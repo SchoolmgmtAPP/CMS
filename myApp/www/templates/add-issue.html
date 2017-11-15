@@ -6,8 +6,8 @@
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">School Name</span>
 				    <div angucomplete-alt id="txtAutocomplete" placeholder="		Type School Name" pause="100"
-	                 selected-object="afterSchool" local-data="SchoolList" search-fields="name"
-	                 title-field="name" minlength="1" input-class="form-control" match-class="highlight" field-required="true" input-name="schoolname">
+	                 selected-object="afterSchool" local-data="SchoolList" search-fields="school_name"
+	                 title-field="school_name" minlength="1" input-class="form-control" match-class="highlight" field-required="true" input-name="schoolname">
             	</div>
             	<div ng-messages="addIssueForm.schoolname.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.schoolname.$valid">Please Enter School name</div>

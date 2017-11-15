@@ -7,12 +7,12 @@
 	  		<div class="item item-divider divHead">
 				Manila Division
 			</div>
-		        <ion-item ui-sref="app.listissues" class="sch_subitem">
-		            Rizal HS
+		        <ion-item ui-sref="app.listissues" class="sch_subitem" ng-repeat="list in SchoolList">
+		            {{list.school_name}}
 		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
 		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
 		        </ion-item>
-		        <ion-item ui-sref="app.listissues" class="sch_subitem">
+		        <!-- <ion-item ui-sref="app.listissues" class="sch_subitem">
 		            Bonifacio ES
 		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
 		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
@@ -39,7 +39,7 @@
 		            Gabriela Silang
 		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
 		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
-		        </ion-item>
+		        </ion-item> -->
 	    	</ion-list>
 		</div>
   	</ion-content>

@@ -2,14 +2,8 @@
 	<ion-content scroll="false">
 	<form name="addIssueForm">
 		<div class="list">
-			<label class="item item-input item-floating-label">
-			  	<span class="input-label labelColor">School Name</span>
-			  	<input type="text" placeholder="School Name">
-			<!-- <div angucomplete-alt id="txtAutocomplete" placeholder="Type School name name" pause="100"
-                 selected-object="afterSelectedCountry" local-data="Schools" search-fields="SchoolName"
-                 title-field="SchoolName" minlength="1" input-class="form-control" match-class="highlight">
-            	</div> -->
-			</label>
+			
+			
 			<label class="item item-input item-floating-label">
 				<span class="input-label labelColor">Region</span>
 			    <!-- <input type="text" placeholder="Region Name"> -->
@@ -46,6 +40,17 @@
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.city.$valid">Please Enter City</div>
 		        </div>
 		  	</label>
+		  	<label class="item item-input item-floating-label">
+			  	<span class="input-label labelColor">School Name</span>
+			  	
+			<div angucomplete-alt id="txtAutocomplete" placeholder="Type School name name" pause="100"
+                 selected-object="afterSelectedSchool" local-data="Schools" search-fields="name"
+                 title-field="name" minlength="1" input-class="form-control" match-class="highlight" field-required="true" input-name="school">
+            	</div>
+            <div ng-messages="addIssueForm.school.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
+		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.school.$valid">Please Enter School</div>
+		        </div>
+           </label>
 		</div>
 		<div class="row">
 			<div class="col">

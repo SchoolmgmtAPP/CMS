@@ -1,5 +1,5 @@
 angular.module('cmsapp.addissueCtrl', [])
-.controller('addissueCtrl', function($scope, $stateParams,issueServices,
+.controller('addissueCtrl', function($scope,$state, $stateParams,issueServices,
                                   $ionicLoading, $ionicPopup,$rootScope) {
 
   $scope.data={
@@ -22,7 +22,7 @@ angular.module('cmsapp.addissueCtrl', [])
     
     $scope.loading();
     var datatoschool ={
-      user_id : '19'
+      user_id : localStorage.getItem('user_id')
     }
     $scope.autoload = function(){
 
@@ -58,7 +58,16 @@ angular.module('cmsapp.addissueCtrl', [])
             };
             console.log(data);
             issueServices.saveissue(data).then(function(response){
+               if (response.data.success = 'true') {
+                var alertPopup = $ionicPopup.alert({
+                   title: 'success',
+                   template: response.data.message
+                 });
 
+                alertPopup.then(function(){
+                  $state.go('app.listissues');
+                })
+              }
             })
         }
     }

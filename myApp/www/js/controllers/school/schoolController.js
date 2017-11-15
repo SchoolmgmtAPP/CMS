@@ -1,5 +1,6 @@
 angular.module('cmsapp.schoolCtrl', [])
-.controller('schoolCtrl', function($scope, $stateParams) {
+.controller('schoolCtrl', function($scope, $stateParams,
+                                    $ionicLoading,$ionicPopup,$state,issueServices) {
    $scope.groups = [];
   
   $scope.groups = [
@@ -47,7 +48,12 @@ angular.module('cmsapp.schoolCtrl', [])
   $scope.isGroupShown1 = function(group1) {
     return $scope.shownGroup1 === group1;
   };
-
-
+  var datatoschool ={
+      user_id : localStorage.getItem('user_id')
+    }
+    
+    issueServices.view_school(datatoschool).then(function(response){
+             $scope.SchoolList = response.data.response;
+           });
 
 });

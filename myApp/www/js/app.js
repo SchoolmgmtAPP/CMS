@@ -69,7 +69,9 @@ angular.module('cmsapp',[
         get_issue_type_url		: mainUrl + 'general/get_issue_type',
         add_issue_url			: mainUrl + 'issue/add_issue',
         get_userProfile_url		: mainUrl + 'login/get_profile',
-        updateprofile_url		: mainUrl + 'login/update_profile'
+        updateprofile_url		: mainUrl + 'login/update_profile',
+        view_school_by_users_url: mainUrl + 'school/view_school_by_users', //used two time one addissue and list school
+		view_issue_by_school	: mainUrl +'issue/view_issue'
     },
 
     API_HEADERS: {
@@ -144,7 +146,8 @@ angular.module('cmsapp',[
 	    url: '/listschools',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/list-schools.html'
+	        templateUrl: 'templates/list-schools.html',
+	        controller :'schoolCtrl'
 	      }
 	    }
 	  })

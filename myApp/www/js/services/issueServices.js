@@ -24,7 +24,7 @@ angular.module('cmsapp.issueServices', [])
       },
     view_school: function(data1){
      return $http({
-          url:Constants.API_URL['view_school_url'],
+          url:Constants.API_URL['view_school_by_users_url'],
           method: "POST",
           headers: {
                     'Content-Type': Constants.API_HEADERS['content_type']
