@@ -31,23 +31,16 @@ angular.module('cmsapp',[
 	'cmsapp.updateProfileCtrl',
 	'cmsapp.addissueCtrl',
 	'cmsapp.issueServices',
-	'cmsapp.profileService'
+	'cmsapp.profileService',
+	'cmsapp.mandatedlistCtrl',
+	'cmsapp.mandatedlistServices',
+	'cmsapp.firstCtrl',
+	'cmsapp.collaboratorServices',
+	'cmsapp.collaboratorlistCtrl',
+	'cmsapp.viewmandateanalysisCtrl'
 ])
 
 .constant('Constants', {
-    // MESSAGES: {
-    //     restrict_page: 'Please login to view the page',
-    // },
-
-    // FACEBOOK: {
-    //     appId: '1525172267556888',
-    //     apiKey: 'AIzaSyBoYVvZbcLpUFSkmXZg1BrCeii2So91dDQ',
-    // },
-
-    // GOOGLE: {
-    //     clientid: '926191138964-dc2lti8m05u8brfm36v5f2lr5htln64h.apps.googleusercontent.com',
-    // },
-
     // EVENT: {
     //     pageSize: '9'
     // },
@@ -71,7 +64,14 @@ angular.module('cmsapp',[
         get_userProfile_url		: mainUrl + 'login/get_profile',
         updateprofile_url		: mainUrl + 'login/update_profile',
         view_school_by_users_url: mainUrl + 'school/view_school_by_users', //used two time one addissue and list school
-		view_issue_by_school	: mainUrl +'issue/view_issue'
+		view_issue_by_school	: mainUrl +'issue/view_issue',
+		categoryWithItem_url 	: mainUrl + 'general/categoryWithItem',
+		IssueTypeWithIssue_url	: mainUrl + 'general/IssueTypeWithIssue',
+		send_invitation_url		: mainUrl + 'collaborator/send_invitation',
+		invited_collaborator_url: mainUrl + 'collaborator/view_invited_collaborator',
+		view_collaborator_url	: mainUrl + 'collaborator/view_collaborator',
+		cancel_invitation_url	: mainUrl + 'collaborator/cancel_invitation',
+		view_mandated_ana_url	: mainUrl + 'mandate/list_mandate'
     },
 
     API_HEADERS: {
@@ -116,8 +116,9 @@ angular.module('cmsapp',[
   	})
   	.state('home', {
     	url: '/home',
-		templateUrl: 'templates/home.html'
-	    
+		templateUrl: 'templates/home.html',
+		controller : 'firstCtrl',
+		cache	   : false
  	})
 
 	.state('login', {
@@ -225,15 +226,17 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/search-school.html',
-	        controller:'schoolCtrl'
+	        controller:'mandatedlistCtrl'
 	      }
 	    }
 	  })
 	.state('app.viewmandateanalysis', {
-	    url: '/viewmandateanalysis',
+	    url: '/viewmandateanalysis/:service_item_id/:issue_id',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/view-mandate-analysis.html'
+	        templateUrl: 'templates/view-mandate-analysis.html',
+	        controller : 'viewmandateanalysisCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -241,7 +244,9 @@ angular.module('cmsapp',[
 	    url: '/policyquote',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/policy-quote.html'
+	        templateUrl: 'templates/policy-quote.html',
+	        controller : 'policyquoteCtrlInViewMandate',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -249,7 +254,9 @@ angular.module('cmsapp',[
 	    url: '/maseranswer',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/maser-answer.html'
+	        templateUrl: 'templates/maser-answer.html',
+	        controller : 'maseranswerCtrlInViewMandate',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -262,7 +269,7 @@ angular.module('cmsapp',[
 	    }
 	  })
 	.state('app.listissues', {
-	    url: '/listissues',
+	    url: '/listissues/:id',
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/listissues.html',
@@ -449,7 +456,9 @@ angular.module('cmsapp',[
 	    url: '/invitefriends',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/invite-friends.html'
+	        templateUrl: 'templates/invite-friends.html',
+	        controller : 'collaboratorCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -458,6 +467,7 @@ angular.module('cmsapp',[
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/collaborations.html',
+	        controller : 'collaboratorlistCtrl'
 	      }
 	    }
 	  })

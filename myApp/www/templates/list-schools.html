@@ -7,7 +7,7 @@
 	  		<div class="item item-divider divHead">
 				Manila Division
 			</div>
-		        <ion-item ui-sref="app.listissues" class="sch_subitem" ng-repeat="list in SchoolList">
+		        <ion-item ui-sref="app.listissues" class="sch_subitem" ng-repeat="list in SchoolList" ng-click="listIssue(list.app_school_id)">
 		            {{list.school_name}}
 		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
 		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>

@@ -12,15 +12,15 @@
                     ng-class="{active: isGroupShown(group)}">
               <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
             &nbsp;
-            {{group.name}}
+            {{group.cat_name}}
               
           </ion-item>
           <ion-item class="item-accordion"
                     ng-repeat="item in group.items"
                     ng-show="isGroupShown(group)">
-            {{item.subId}}
+            {{item.sub_cat_name}}
             <label class="toggle toggle-energized manadateToggle">
-                <input type="radio" name="serviceCategory">
+                <input type="radio" name="serviceCategory" ng-click="get_service_id({{item.service_item_id}})">
                  <div class="track">
                    <div class="handle"></div>
                  </div>
@@ -42,15 +42,15 @@
                     ng-class="{active: isGroupShown1(group1)}">
               <i class="icon" ng-class="isGroupShown1(group1) ? 'ion-minus' : 'ion-plus'"></i>
             &nbsp;
-            {{group1.name}}
+            {{group1.issue_type_name}}
             
           </ion-item>
           <ion-item class="item-accordion"
                     ng-repeat="item in group1.items"
                     ng-show="isGroupShown1(group1)">
-            {{item.subId}}
+            {{item.issue_name}}
             <label class="toggle toggle-energized manadateToggle">
-                <input type="radio" name="issueTyp"e> 
+                <input type="radio" name="issueTyp" ng-click="get_issue_id({{item.issue_id}})"> 
                  <div class="track">
                    <div class="handle"></div>
                  </div>
@@ -61,7 +61,7 @@
       </div>
 	</div>
   <div class="row">   
-      <button class="button button-energized button-block sign_btn" ui-sref="app.viewmandateanalysis">
+      <button class="button button-energized button-block sign_btn" ui-sref="app.viewmandateanalysis" ng-click="view_mandate()">
         View Mandate Analysis
       </button>
   </div>

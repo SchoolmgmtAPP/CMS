@@ -28,6 +28,7 @@ angular.module('cmsapp.loginCtrl', [])
 			$ionicLoading.hide();
 			if (response.success == 'true') {
 				localStorage.setItem('user_id',response.response.user_id); 
+				localStorage.setItem('loggedin','true');
 				$state.go('app.dashboard');
 			}else{
 			 	 var alertPopup = $ionicPopup.alert({

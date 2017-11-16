@@ -1,6 +1,6 @@
 angular.module('cmsapp.AppCtrl', [])
 
-.controller('AppCtrl', function($scope,$state, $ionicModal, $timeout
+.controller('AppCtrl', function($scope,$rootScope,$state, $ionicModal, $timeout
 							,$ionicPopup,$ionicLoading,deleteAccountService) {
 
 	$scope.delete_account = function(){
@@ -49,6 +49,12 @@ angular.module('cmsapp.AppCtrl', [])
 				});
 			 }
 		});
+	}
+	$rootScope.logout = function() {
+
+			localStorage.setItem('user_id','');
+			localStorage.setItem('loggedin','')
+			$state.go('login');
 	}
 })
 

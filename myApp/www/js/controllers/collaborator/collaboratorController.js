@@ -1,4 +1,5 @@
-angular.module('plgn.ionic-segment',[]).directive('ionSegment', function() {
+angular.module('plgn.ionic-segment',[])
+.directive('ionSegment', function() {
     return {
       restrict: 'E',
       require: "ngModel",
@@ -41,3 +42,47 @@ angular.module('plgn.ionic-segment',[]).directive('ionSegment', function() {
       }
     }
   })
+.controller('collaboratorCtrl', function($scope, $stateParams,
+                                    $ionicLoading,$ionicPopup,$state,
+                                    collaboratorServices) {
+    
+    $scope.data = {
+      name : '',
+      email_address:''
+    }  
+      $scope.send_invitation = function(form){
+        $scope.submitted=true;
+      if(form.$valid)
+      {
+        $ionicLoading.show({
+          content: 'Loading',
+          animation: 'fade-in',
+          showBackdrop: true,
+          maxWidth: 200,
+          showDelay: 0
+        });
+    
+      var data ={
+        user_id       :localStorage.getItem('user_id'),
+        name          : $scope.data.name,
+        email_address : $scope.data.email_address
+      }
+    
+      collaboratorServices.send_invitationApi(data).then(function(response){
+            
+            var alertPopup = $ionicPopup.alert({
+               title: response.data.success == 'true' ? 'Success' : 'Fail',
+               template: response.message
+             });
+
+              if (response.data.success == 'true') {        
+                  $ionicLoading.hide();
+
+                  alertPopup.then(function(res) {
+                    $state.go('app.collaborations');
+                  });
+              }
+        });
+      }
+    }
+})

@@ -5,42 +5,41 @@
 		<ul class="list">
 			<label class="item item-input">
 				<span class="input-label spanMandate">Service Classification</span>
-			    <span class="spanMandaet2">School Building</span>
+			    <span class="spanMandaet2">{{listData.category_name}}</span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Service Item</span>
-			    <span class="spanMandaet2">School Building Construction</span>
+			    <span class="spanMandaet2">{{listData.service_item_name}}</span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Issues</span>
-			    <span class="spanMandaet2">Shortage of school building or classrooms</span>
+			    <span class="spanMandaet2">{{listData.issue_name}}</span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Accountable Office</span>
-			    <span class="spanMandaet2">Educational Facilities Section under School Governance and Operation Division</span>
+			    <span class="spanMandaet2">{{listData.accountable_office}}</span>
 			</label>
 			<label class="item item-input ">
 			   <span class="input-label spanMandate">Request for Information</span>
-			    <span class="spanMandaet2">BEIS Data of the school. Long list of schools in need. Validated list</span>
+			    <span class="spanMandaet2">{{listData.request_for_information}}</span>
 			</label>
 			<label class="item item-input">
 			   	<span class="input-label spanMandate">Reference Policy</span>
-			    <span class="spanMandaet2">RA 9155 - Governance of Basic Education Act of 2001.<br/>
-			    DO 52, s. 2015 - New Organizational Structures of the Central, Regional, and Schools Division Offices of the Department of Education
-				<br/>
-			   	Educational Facilities Manual of 2010</span>
+			    <span class="spanMandaet2">{{listData.reference_policy}}<br/>
+			    </span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Policy Links</span>
-			    <span  class="spanMandaet2">http://www.gov.ph/2001/08/11/republic-act-no-9155/</span>
+			    <span  class="spanMandaet2">{{listData.policy_links}}</span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Policy Quote</span>
-			    <span class="spanMandaet2">RA 9155 sec. 7, letter C states that the SDS has the authority, accountability...<button class="button button-clear button-small sign_btn read_more" ui-sref="app.policyquote">read more</button></span>
+			    <span class="spanMandaet2">{{listData.policy_quote | limitTo: 40}}
+			    <button class="button button-clear button-small sign_btn read_more" ui-sref="app.policyquote">{{listData.policy_quote.length > 20 ? '...read more' : ''}}</button></span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">MASER's ANSWER</span>
-			    <span class="spanMandaet2">The government office mandated to address issues relating to shortage of classrooms...<button class="button button-clear button-small sign_btn read_more" ui-sref="app.maseranswer">read more</button></span>
+			    <span class="spanMandaet2">{{listData.masers_answer | limitTo: 40}}<button class="button button-clear button-small sign_btn read_more" ui-sref="app.maseranswer">{{listData.masers_answer.length > 20 ? '...read more' : ''}}</button></span>
 			</label>
 		</ul>
 		</div>
