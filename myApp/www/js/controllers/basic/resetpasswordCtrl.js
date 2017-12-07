@@ -3,7 +3,7 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 .controller('resetpasswordCtrl', function($scope,$state, $ionicModal,
 										 $timeout,Constants,ChangePwdService,
 										 ResetPasswordService,VerifyCodeService,
-										 $ionicLoading,$ionicPopup) {
+										 $ionicLoading,$ionicPopup,$rootScope) {
 
 	$scope.data = {
 			'email_address'	: '',
@@ -100,6 +100,37 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 		});
 	}
 	}
+
+	$scope.resend_code =function(){
+
+		$ionicLoading.show({
+	          content: 'Loading',
+	          animation: 'fade-in',
+	          showBackdrop: true,
+	          maxWidth: 200,
+	          showDelay: 0
+	        });
+
+		console.log($rootScope.email_address);
+		var data = {
+			email_address : $rootScope.email_address
+		}
+		VerifyCodeService.resendcode(data).then(function(response){
+			console.log(response);
+			$ionicLoading.hide();
+				if(response.success == 'true'){
+					$ionicPopup.alert({
+			           title: 'Success',
+			           template: response.message
+			         });
+				}else{
+					$ionicPopup.alert({
+			           title: 'fail',
+			           template: 'Please try again'
+			         });
+				}
+		});
+	}
 	  
-})
+});
 

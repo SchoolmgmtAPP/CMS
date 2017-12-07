@@ -71,7 +71,8 @@ angular.module('cmsapp',[
 		invited_collaborator_url: mainUrl + 'collaborator/view_invited_collaborator',
 		view_collaborator_url	: mainUrl + 'collaborator/view_collaborator',
 		cancel_invitation_url	: mainUrl + 'collaborator/cancel_invitation',
-		view_mandated_ana_url	: mainUrl + 'mandate/list_mandate'
+		view_mandated_ana_url	: mainUrl + 'mandate/list_mandate',
+		resend_verify_code_url  : mainUrl + 'register_user/resendVerification'
     },
 
     API_HEADERS: {
