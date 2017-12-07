@@ -11,7 +11,7 @@
 <div class="bar bar-header item-input-inset sticky">
   <label class="item-input-wrapper">
     <i class="icon ion-ios-search placeholder-icon"></i>
-    <input type="search" placeholder="Search">
+    <input type="search" placeholder="Search" ng-model="test">
   </label>
   <button class="button button-clear sign_btn">
     Cancel
@@ -25,94 +25,26 @@
             <!-- =============================================================== -->
             <!-- member list -->
             <ul class="friend-list">
-                <li class="active bounceInDown" ng-click="DetailPage()">
+                <li class="active bounceInDown" ng-click="DetailPage()" ng-repeat="chat in chatData  | orderBy:'-added_date' | filter:test ">
                   <a href="javascript:void(0)" class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                  
+                   <img ng-src="{{chat.image}}" class="colbImg" ng-if="chat.image != ''"  alt="" class="img-circle">
+                  
+                  <img src="img/user.png" class="colbImg" ng-if="chat.image == ''"  alt="no found" class="img-circle">
+                    <!-- <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle"> -->
                     <div class="friend-name"> 
-                      <strong>John Doe</strong>
+                      <strong>{{chat.name}}</strong>
                     </div>
-                    <div class="last-message text-muted">Hello, Are you there?</div>
-                    <small class="time text-muted">Just now</small>
-                    <small class="chat-alert label label-danger">1</small>
+                    <!-- <div class="last-message text-muted" ng-class="{ 'makebold' : {{chat.is_read}} == 'N'}"> -->
+                      
+                    <div class="last-message text-muted" ng-class="{{chat.is_read}}=='N' ? 'makebold' :'' ">
+
+                    {{chat.message_text}}</div>
+                    <small class="time text-muted">{{ chat.cdate}}</small>
+                    <!-- <small class="chat-alert label label-danger">1</small> -->
                   </a>
                 </li>
-                <li>
-                  <a href="#" class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
-                    <div class="friend-name"> 
-                      <strong>Jane Doe</strong>
-                    </div>
-                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
-                    <small class="time text-muted">5 mins ago</small>
-                  <small class="chat-alert text-muted"><i class="fa fa-check"></i></small>
-                  </a>
-                </li> 
-                <li>
-                  <a href="#" class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle">
-                    <div class="friend-name"> 
-                      <strong>Kate</strong>
-                    </div>
-                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
-                    <small class="time text-muted">Yesterday</small>
-                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
-                  </a>
-                </li>  
-                <li>
-                  <a href="#" class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
-                    <div class="friend-name"> 
-                      <strong>Kate</strong>
-                    </div>
-                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
-                    <small class="time text-muted">Yesterday</small>
-                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
-                  </a>
-                </li>     
-                <li>
-                  <a href="#" class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
-                    <div class="friend-name"> 
-                      <strong>Kate</strong>
-                    </div>
-                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
-                    <small class="time text-muted">Yesterday</small>
-                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
-                  </a>
-                </li>        
-                <li>
-                  <a href="#" class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_6.jpg" alt="" class="img-circle">
-                    <div class="friend-name"> 
-                      <strong>Kate</strong>
-                    </div>
-                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
-                    <small class="time text-muted">Yesterday</small>
-                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
-                  </a>
-                </li>          
-                <li>
-                  <a href="#" class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_5.jpg" alt="" class="img-circle">
-                    <div class="friend-name"> 
-                      <strong>Kate</strong>
-                    </div>
-                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
-                    <small class="time text-muted">Yesterday</small>
-                    <small class="chat-alert text-muted"><i class="fa fa-reply"></i></small>
-                  </a>
-                </li>
-                <li>
-                    <a href="#" class="clearfix">
-                    <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
-                    <div class="friend-name"> 
-                      <strong>Jane Doe</strong>
-                    </div>
-                    <div class="last-message text-muted">Lorem ipsum dolor sit amet.</div>
-                    <small class="time text-muted">5 mins ago</small>
-                  <small class="chat-alert text-muted"><i class="fa fa-check"></i></small>
-                  </a>
-                </li>                 
+                                 
             </ul>
     </div>
 

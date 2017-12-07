@@ -37,7 +37,8 @@ angular.module('cmsapp',[
 	'cmsapp.firstCtrl',
 	'cmsapp.collaboratorServices',
 	'cmsapp.collaboratorlistCtrl',
-	'cmsapp.viewmandateanalysisCtrl'
+	'cmsapp.viewmandateanalysisCtrl',
+	'cmsapp.chatservices'
 ])
 
 .constant('Constants', {
@@ -72,7 +73,8 @@ angular.module('cmsapp',[
 		view_collaborator_url	: mainUrl + 'collaborator/view_collaborator',
 		cancel_invitation_url	: mainUrl + 'collaborator/cancel_invitation',
 		view_mandated_ana_url	: mainUrl + 'mandate/list_mandate',
-		resend_verify_code_url  : mainUrl + 'register_user/resendVerification'
+		resend_verify_code_url  : mainUrl + 'register_user/resendVerification',
+		list_message_url		: mainUrl + 'chat/list_message'
     },
 
     API_HEADERS: {
