@@ -1,4 +1,5 @@
 angular.module('cmsapp.addSchoolCtrl', [])
+
 .controller('addSchoolCtrl', function($scope, $stateParams,schoolServices,
                                     $ionicLoading,$ionicPopup,$state) {
      $scope.selected = '';
@@ -12,6 +13,7 @@ angular.module('cmsapp.addSchoolCtrl', [])
         });
     }
     
+
     $scope.loading();
      schoolServices.getRegions().then(function(response){
 	     $scope.Regions = response.data.response;
@@ -25,18 +27,20 @@ angular.module('cmsapp.addSchoolCtrl', [])
           var data = {
                 user_id   : localStorage.getItem('user_id'),
                 school_id : $scope.selectedschool
+
             };
             schoolServices.addschool(data).then(function(response){
-              if (response.data.success = 'true') {
+              console.log(response);
+             
                 var alertPopup = $ionicPopup.alert({
-                   title: 'success',
+                   title: response.data.success == 'true' ? 'Success' : 'Fail',
                    template: response.data.message
                  });
-
-                alertPopup.then(function(){
-                  $state.go('app.listschools');
-                })
-              }
+                  if (response.data.success == 'true') {
+                  alertPopup.then(function(){
+                    $state.go('app.listschools');
+                  });
+                }
             })
         }
     }
@@ -86,4 +90,6 @@ angular.module('cmsapp.addSchoolCtrl', [])
         $scope.selectedschool = selected.originalObject.school_id;
       }
     }
+
+    
 });

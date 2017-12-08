@@ -4,42 +4,20 @@
   	</ion-nav-buttons>
   	<ion-content>
 	  	<ion-list can-swipe="true">
-	  		<div class="item item-divider divHead">
+	  		<div class="item item-divider divHead" >
 				Manila Division
 			</div>
-		        <ion-item ui-sref="app.listissues" class="sch_subitem" ng-repeat="list in SchoolList" ng-click="listIssue(list.app_school_id)">
+		        <ion-item ui-sref="app.listissues" class="sch_subitem" ng-repeat="list in SchoolList" ng-click="listIssue(list)">
 		            {{list.school_name}}
 		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
-		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
+		            <ion-option-button class="button-assertive icon ion-trash-a" ng-click="delete_school(list)"></ion-option-button>
 		        </ion-item>
-		        <!-- <ion-item ui-sref="app.listissues" class="sch_subitem">
-		            Bonifacio ES
-		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
-		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
-		        </ion-item>
-		        <ion-item ui-sref="app.listissues" class="sch_subitem">
-		            Tandang Sora ES
-		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
-		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
-		        </ion-item>
-	        <div class="item item-divider divHead">
-				Quezon City Division
-			</div>
-				<ion-item ui-sref="app.listissues" class="sch_subitem">
-		            Jacinto HS
-		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
-		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
-		        </ion-item>
-		        <ion-item ui-sref="app.listissues" class="sch_subitem">
-		            Dagohoy ES
-		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
-		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
-		        </ion-item>
-		        <ion-item ui-sref="app.listissues" class="sch_subitem">
-		            Gabriela Silang
-		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
-		            <ion-option-button class="button-assertive icon ion-trash-a"></ion-option-button>
-		        </ion-item> -->
+		       <!--  <ul ng-repeat="(division_id, value) in SchoolList | groupBy: 'division_id' ">
+				  Group name: {{ division_id }}
+				  <li ng-repeat="player in value">
+				    player: {{ player.school_name }} 
+				  </li>
+				</ul> -->
 	    	</ion-list>
 		</div>
   	</ion-content>

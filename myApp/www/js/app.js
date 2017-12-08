@@ -78,7 +78,8 @@ angular.module('cmsapp',[
 		list_message_url		: mainUrl + 'chat/list_message',
 		view_message_url		: mainUrl + 'chat/view_message',
 		send_message_url		: mainUrl + 'chat/send_message',
-		resetpassword_data_url	: mainUrl + 'login/resetpassword_data'
+		resetpassword_data_url	: mainUrl + 'login/resetpassword_data',
+		remove_school_url   	: mainUrl + 'school/remove_school'
     },
 
     API_HEADERS: {
