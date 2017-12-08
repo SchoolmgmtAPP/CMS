@@ -14,22 +14,29 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 		$scope.submitted=true;
 	 if(resetForm.$valid)
 	    {
-	    	$ionicLoading.show({
-          content: 'Loading',
-          animation: 'fade-in',
-          showBackdrop: true,
-          maxWidth: 200,
-          showDelay: 0
-        });
+	     	$rootScope.loadingOn();
 
+	    
 		var tmp = {
 			email_address	: $scope.data.mail
 		};
 		
 		ResetPasswordService.sendEmail(tmp).then(function(response){	
 			console.log(response);
+			// $ionicLoading.hide();
+				$rootScope.loadingOff();
+			var alertPopup = $ionicPopup.alert({
+		           title: response.success == 'true' ? 'Success' : 'Fail',
+		           template: response.message
+		         });
+
+			if (response.success == 'true') {
+				alertPopup.then(function(res) {
+			 		$state.go('changepassword');
+				});
+			 }
 		});
-		$ionicLoading.hide();
+		
 	}
 	}
 

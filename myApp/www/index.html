@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="cmsapp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -58,6 +58,7 @@
     <script src="js/controllers/basic/loginCtrl.js"></script>
     <script src="js/controllers/basic/resetpasswordCtrl.js"></script>
     <script src="js/controllers/profile/updateProfileCtrl.js"></script>
+    <script src="js/controllers/basic/changepassCtrl.js"></script>
     <script src="js/controllers/issue/addissueCtrl.js"></script>
     <script src="js/controllers/mandated/mandatedlistCtrl.js"></script>
     <script src="js/controllers/mandated/viewmandateanalysisCtrl.js"></script>
@@ -78,7 +79,7 @@
     <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
   </head>
 
-  <body ng-app="cmsapp">
+  <body ng-controller="mainCtrl">
     <ion-nav-view></ion-nav-view>
   </body>
 </html>

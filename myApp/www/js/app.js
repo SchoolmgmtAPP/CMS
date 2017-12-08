@@ -38,7 +38,8 @@ angular.module('cmsapp',[
 	'cmsapp.collaboratorServices',
 	'cmsapp.collaboratorlistCtrl',
 	'cmsapp.viewmandateanalysisCtrl',
-	'cmsapp.chatservices'
+	'cmsapp.chatservices',
+	'cmsapp.changepassCtrl'
 ])
 
 .constant('Constants', {
@@ -65,7 +66,7 @@ angular.module('cmsapp',[
         get_userProfile_url		: mainUrl + 'login/get_profile',
         updateprofile_url		: mainUrl + 'login/update_profile',
         view_school_by_users_url: mainUrl + 'school/view_school_by_users', //used two time one addissue and list school
-		view_issue_by_school	: mainUrl +'issue/view_issue',
+		view_issue_by_school	: mainUrl + 'issue/view_issue',
 		categoryWithItem_url 	: mainUrl + 'general/categoryWithItem',
 		IssueTypeWithIssue_url	: mainUrl + 'general/IssueTypeWithIssue',
 		send_invitation_url		: mainUrl + 'collaborator/send_invitation',
@@ -76,14 +77,29 @@ angular.module('cmsapp',[
 		resend_verify_code_url  : mainUrl + 'register_user/resendVerification',
 		list_message_url		: mainUrl + 'chat/list_message',
 		view_message_url		: mainUrl + 'chat/view_message',
-		send_message_url		: mainUrl + 'chat/send_message'
+		send_message_url		: mainUrl + 'chat/send_message',
+		resetpassword_data_url	: mainUrl + 'login/resetpassword_data'
     },
 
     API_HEADERS: {
         content_type: 'application/x-www-form-urlencoded',
     }
 })
+.controller('mainCtrl',function($scope,$ionicLoading,$state,Constants,$rootScope){
 
+	$rootScope.loadingOn = function(){
+		$ionicLoading.show({
+		          content: 'Loading',
+		          animation: 'fade-in',
+		          showBackdrop: true,
+		          maxWidth: 200,
+		          showDelay: 0
+		        });
+	}
+	$rootScope.loadingOff = function(){
+		$ionicLoading.hide();
+	}
+})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -164,13 +180,12 @@ angular.module('cmsapp',[
 	    cache	   : false
 	      
 	  })
-	.state('app.changepassword', {
+	// this is a reset password 
+	.state('changepassword', {
 	    url: '/changepassword',
-	    views: {
-	      'menuContent': {
-	        templateUrl: 'templates/change-password.html'
-	      }
-	    }
+	     	templateUrl: 'templates/change-password.html',
+	        controller : 'changepassCtrl',
+	        cache	   : false
 	  })	
 	.state('resetpassword', {
 	    url: '/resetpassword',
@@ -186,6 +201,7 @@ angular.module('cmsapp',[
 	    cache	   : false
 	     
 	  })
+	//this is change password
 	.state('app.resetchangepassword', {
 	    url: '/resetchangepassword',	   
 	    views: {
