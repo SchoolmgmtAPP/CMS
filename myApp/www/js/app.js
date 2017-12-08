@@ -74,7 +74,9 @@ angular.module('cmsapp',[
 		cancel_invitation_url	: mainUrl + 'collaborator/cancel_invitation',
 		view_mandated_ana_url	: mainUrl + 'mandate/list_mandate',
 		resend_verify_code_url  : mainUrl + 'register_user/resendVerification',
-		list_message_url		: mainUrl + 'chat/list_message'
+		list_message_url		: mainUrl + 'chat/list_message',
+		view_message_url		: mainUrl + 'chat/view_message',
+		send_message_url		: mainUrl + 'chat/send_message'
     },
 
     API_HEADERS: {
@@ -485,7 +487,7 @@ angular.module('cmsapp',[
 	    }
 	  })
 	.state('app.viewchat', {
-	    url: '/viewchat',
+	    url: '/viewchat/:sender_id/:receiver_id',
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/view-chat.html',

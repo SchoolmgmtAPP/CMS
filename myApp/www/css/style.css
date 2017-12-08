@@ -716,7 +716,10 @@ small, .small {
 }
 
 .chat-message {
-  padding: 60px 20px 115px;
+    padding: 60px 20px 115px;
+    width: 100%;
+    margin: 15px 0 0 0;
+    height: auto;
 }
 
 .chat {
@@ -745,7 +748,7 @@ img {
 }
 
 .chat li.left .chat-body {
-  margin-left: 70px;
+  margin-right: 70px;
   background-color: #fff;
 }
 
@@ -809,7 +812,7 @@ img {
 }
 
 .chat li.right .chat-body {
-  margin-right: 70px;
+  margin-left: 70px;
   background-color: #fff;
 }
 

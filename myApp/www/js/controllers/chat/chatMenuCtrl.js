@@ -1,8 +1,9 @@
 angular.module('cmsapp.chatMenuCtrl', ['ionic'])
 .controller('chatMenuCtrl', function($scope, $timeout, $ionicScrollDelegate,$state,$location,chatservices,$filter) {
 
-	$scope.DetailPage = function(){
-		$state.go('app.viewchat');
+	$scope.DetailPage = function(sender,receiver){
+		// $state.go('app.viewchat');
+		console.log("sender"+sender +"  receiver"+receiver);
 	}
 
 	var data = {

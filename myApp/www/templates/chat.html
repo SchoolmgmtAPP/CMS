@@ -25,7 +25,9 @@
             <!-- =============================================================== -->
             <!-- member list -->
             <ul class="friend-list">
-                <li class="active bounceInDown" ng-click="DetailPage()" ng-repeat="chat in chatData  | orderBy:'-added_date' | filter:test ">
+                <li class="active bounceInDown" ng-repeat="chat in chatData  | orderBy:'-added_date' | filter:test " ui-sref="app.viewchat({'sender_id':chat.sender_id,'receiver_id':chat.receiver_id})">
+                <!-- ui-sref="vendor-profile({'vendor_id':subscription.vendor_id })" -->
+                <!-- ui-sref="DetailPage({'sender_id':chat.sender_id,'receiver_id':chat.receiver_id}) -->
                   <a href="javascript:void(0)" class="clearfix">
                   
                    <img ng-src="{{chat.image}}" class="colbImg" ng-if="chat.image != ''"  alt="" class="img-circle">
@@ -37,7 +39,7 @@
                     </div>
                     <!-- <div class="last-message text-muted" ng-class="{ 'makebold' : {{chat.is_read}} == 'N'}"> -->
                       
-                    <div class="last-message text-muted" ng-class="{{chat.is_read}}=='N' ? 'makebold' :'' ">
+                    <div class="last-message text-muted" ng-class="{{chat.is_read}}=='N' ? 'makebold' :'' "  >
 
                     {{chat.message_text}}</div>
                     <small class="time text-muted">{{ chat.cdate}}</small>
