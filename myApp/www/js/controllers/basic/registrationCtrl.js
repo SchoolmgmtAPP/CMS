@@ -1,6 +1,6 @@
 angular.module('cmsapp.registrationCtrl', [])
 
-.controller('registrationCtrl', function($scope,$state, $ionicModal,
+.controller('registrationCtrl', function($timeout,$scope,$state, $ionicModal,
 									 $timeout,$ionicLoading,$localStorage,
 									 Constants,Registration,$rootScope) {
 

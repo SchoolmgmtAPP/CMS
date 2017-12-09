@@ -40,9 +40,12 @@ angular.module('cmsapp.AppCtrl', [])
 			$ionicLoading.hide();
 			var alertPopup = $ionicPopup.alert({
 		           title: response.success == 'true' ? 'Success' : 'Fail',
-		           template: response.message
+		           template: response.message,
+		           cssClass:"messagePopup"
 		         });
-
+			 $timeout(function() {
+                alertPopup.close(); //close the popup after 3 seconds for some reason
+            }, 2000);
 			if (response.success == 'true') {
 				alertPopup.then(function(res) {
 			 		$state.go('login');

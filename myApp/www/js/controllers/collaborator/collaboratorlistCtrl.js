@@ -2,7 +2,7 @@ angular.module('cmsapp.collaboratorlistCtrl', [])
 
 .controller('collaboratorlistCtrl', function($scope,$state, $ionicModal,
 										 $timeout,$ionicLoading,$ionicPopup,
-										 collaboratorServices) {
+										 collaboratorServices,$timeout) {
 			var data = {
 				user_id	: localStorage.getItem('user_id')
 			}
@@ -48,9 +48,12 @@ angular.module('cmsapp.collaboratorlistCtrl', [])
 			
 				var alertPopup = $ionicPopup.alert({
 		           title: response.data.success == 'true' ? 'Success' : 'Fail',
-		           template: response.data.message
+		           template: response.data.message,
+		           cssClass:"messagePopup"
 		         });
-
+				 $timeout(function() {
+                	alertPopup.close(); //close the popup after 3 seconds for some reason
+            	}, 2000);
 			if (response.data.success == 'true') {
 				collaboratorServices.view_invited_collaborator(data).then(function(response){
 				 	$scope.visitors = response.data.response;

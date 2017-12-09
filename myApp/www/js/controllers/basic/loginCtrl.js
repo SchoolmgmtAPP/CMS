@@ -1,6 +1,6 @@
 angular.module('cmsapp.loginCtrl', [])
 
-.controller('loginCtrl', function($scope, $state,$ionicModal, $timeout,
+.controller('loginCtrl', function($timeout,$scope, $state,$ionicModal, $timeout,
 								Constants,Login,$ionicLoading,$ionicPopup) {
 
 	$scope.data = {
@@ -33,7 +33,8 @@ angular.module('cmsapp.loginCtrl', [])
 			}else{
 			 	 var alertPopup = $ionicPopup.alert({
 		           title: 'Error',
-		           template: response.message
+		           template: response.message,
+		           cssClass:"messagePopup"
 		         });
 			 }
 		});

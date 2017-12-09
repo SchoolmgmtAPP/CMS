@@ -44,7 +44,7 @@ angular.module('plgn.ionic-segment',[])
   })
 .controller('collaboratorCtrl', function($scope, $stateParams,
                                     $ionicLoading,$ionicPopup,$state,
-                                    collaboratorServices) {
+                                    collaboratorServices,$timeout) {
     
     $scope.data = {
       name : '',
@@ -72,9 +72,12 @@ angular.module('plgn.ionic-segment',[])
             
             var alertPopup = $ionicPopup.alert({
                title: response.data.success == 'true' ? 'Success' : 'Fail',
-               template: response.message
+               template: response.message,
+               cssClass:"messagePopup"
              });
-
+            $timeout(function() {
+                alertPopup.close(); //close the popup after 3 seconds for some reason
+            }, 2000);
               if (response.data.success == 'true') {        
                   $ionicLoading.hide();
 

@@ -1,6 +1,6 @@
 angular.module('cmsapp.firstCtrl', [])
 
-.controller('firstCtrl', function($scope,$rootScope,$state, $ionicModal, $timeout
+.controller('firstCtrl', function($timeout,$scope,$rootScope,$state, $ionicModal, $timeout
 							,$ionicPopup,$ionicLoading,deleteAccountService) {
 
 console.log(localStorage.getItem('loggedin'));

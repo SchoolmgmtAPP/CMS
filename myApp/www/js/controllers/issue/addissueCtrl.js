@@ -1,6 +1,6 @@
 angular.module('cmsapp.addissueCtrl', [])
 .controller('addissueCtrl', function($scope,$state, $stateParams,issueServices,
-                                  $ionicLoading, $ionicPopup,$rootScope) {
+                                  $ionicLoading, $ionicPopup,$rootScope,$timeout) {
 
   $scope.data={
     mandatary_agency:'',
@@ -61,9 +61,12 @@ angular.module('cmsapp.addissueCtrl', [])
                if (response.data.success = 'true') {
                 var alertPopup = $ionicPopup.alert({
                    title: 'success',
-                   template: response.data.message
+                   template: response.data.message,
+                   cssClass:"messagePopup"
                  });
-
+                 $timeout(function() {
+                    alertPopup.close(); //close the popup after 3 seconds for some reason
+                }, 2000);
                 alertPopup.then(function(){
                   $state.go('app.listissues');
                 })

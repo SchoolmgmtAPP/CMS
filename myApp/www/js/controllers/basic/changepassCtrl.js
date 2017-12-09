@@ -1,6 +1,6 @@
 angular.module('cmsapp.changepassCtrl', [])
 
-.controller('changepassCtrl', function($scope, $state,$ionicModal, $timeout,
+.controller('changepassCtrl', function($timeout,$scope, $state,$ionicModal, $timeout,
 								Constants,$rootScope,ResetPasswordService,$ionicLoading,$ionicPopup) {
 
 	$scope.data = {
@@ -23,8 +23,12 @@ angular.module('cmsapp.changepassCtrl', [])
 					$rootScope.loadingOff();
 					var alertPopup = $ionicPopup.alert({
 			           title: response.success == 'true' ? 'Success' : 'Fail',
-			           template: response.message
+			           template: response.message,
+			           cssClass:"messagePopup"
 			         });
+					$timeout(function() {
+				     	alertPopup.close(); //close the popup after 3 seconds for some reason
+					}, 2000);
 
 				if (response.success == 'true') {
 					alertPopup.then(function(res) {

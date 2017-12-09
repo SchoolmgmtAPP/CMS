@@ -3,7 +3,7 @@ angular.module('cmsapp.updateProfileCtrl', [])
 .controller('updateProfileCtrl', function($scope,$state,$rootScope,
 							 		$ionicModal,$timeout,$ionicLoading,
 							 		$localStorage,Constants,$cordovaCamera,
-							 		$ionicPopup,profileService) {
+							 		$ionicPopup,profileService,$timeout) {
 
 	// $scope.data = {
 	// 		'name'			: '',
@@ -128,9 +128,12 @@ angular.module('cmsapp.updateProfileCtrl', [])
 			 $ionicLoading.hide();
 			 var alertPopup = $ionicPopup.alert({
 		           title: response.success == 'true' ? 'Success' : 'Fail',
-		           template: response.message
+		           template: response.message,
+		           cssClass:"messagePopup"
 		         });
-
+			  $timeout(function() {
+                alertPopup.close(); //close the popup after 3 seconds for some reason
+            }, 2000);
 			if (response.success == 'true') {
 				alertPopup.then(function(res) {
 			 		$state.go('app.viewprofile');

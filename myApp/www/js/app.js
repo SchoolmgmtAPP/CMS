@@ -102,7 +102,7 @@ angular.module('cmsapp',[
 		$ionicLoading.hide();
 	}
 })
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$location,$ionicHistory) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -115,6 +115,15 @@ angular.module('cmsapp',[
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    $ionicPlatform.registerBackButtonAction(function (event) {
+       console.log($location.path());
+       if ($location.path() === "/home" || $location.path() === "/dashboard") {
+         event.preventDefault();
+       } else {
+         $ionicHistory.goBack();
+       }
+    }, 100);
   });
 })
 

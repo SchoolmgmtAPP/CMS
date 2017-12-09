@@ -4,7 +4,7 @@
 		<div class="list">
 			
 			
-			<label class="item item-input item-floating-label">
+			<div class="item item-input item-floating-label">
 				<span class="input-label labelColor">Region</span>
 			    <!-- <input type="text" placeholder="Region Name"> -->
 			    <div angucomplete-alt id="txtAutocomplete" placeholder="Type Region name" pause="100"
@@ -15,8 +15,8 @@
             	<div ng-messages="addIssueForm.region.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.region.$valid">Please Enter Region</div>
 		        </div>
-			</label>
-		  	<label class="item item-input item-floating-label">
+			</div>
+		  	<div class="item item-input item-floating-label">
 			    <span class="input-label labelColor">Division</span>
 			    <!-- <input type="text" placeholder="Division Name"> -->
 		  	<div angucomplete-alt id="txtAutocomplete" placeholder="Type Division name" pause="100"
@@ -28,8 +28,8 @@
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.division.$valid">Please Enter Division</div>
 		        </div>
 
-		  	</label>
-		  	<label class="item item-input item-floating-label">
+		  	</div>
+		  	<divdiv class="item item-input item-floating-label">
 			    <span class="input-label labelColor">City/Municipality</span>
 			    <!-- <input type="text" placeholder="City/Municipality Name"> -->
 		  	<div angucomplete-alt id="txtAutocomplete" placeholder="Type City/Municipality name" pause="100"
@@ -39,8 +39,8 @@
             <div ng-messages="addIssueForm.city.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.city.$valid">Please Enter City</div>
 		        </div>
-		  	</label>
-		  	<label class="item item-input item-floating-label">
+		  	</div>
+		  	<div class="item item-input item-floating-label">
 			  	<span class="input-label labelColor">School Name</span>
 			  	
 			<div angucomplete-alt id="txtAutocomplete" placeholder="Type School name" pause="100"
@@ -50,7 +50,7 @@
             <div ng-messages="addIssueForm.school.$error" ng-if='submitted'  style="color:red;font-size: 13px;" role="alert">
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.school.$valid">Please Enter School</div>
 		        </div>
-           </label>
+           </div>
 		</div>
 		<div class="row">
 			<div class="col">

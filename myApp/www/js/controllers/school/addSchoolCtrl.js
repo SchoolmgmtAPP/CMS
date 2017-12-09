@@ -1,7 +1,7 @@
 angular.module('cmsapp.addSchoolCtrl', [])
 
 .controller('addSchoolCtrl', function($scope, $stateParams,schoolServices,
-                                    $ionicLoading,$ionicPopup,$state) {
+                                    $ionicLoading,$ionicPopup,$state,$timeout) {
      $scope.selected = '';
      $scope.loading = function(){
       $ionicLoading.show({
@@ -34,8 +34,12 @@ angular.module('cmsapp.addSchoolCtrl', [])
              
                 var alertPopup = $ionicPopup.alert({
                    title: response.data.success == 'true' ? 'Success' : 'Fail',
-                   template: response.data.message
+                   template: response.data.message,
+                   cssClass:"messagePopup"
                  });
+                 $timeout(function() {
+                      alertPopup.close(); //close the popup after 3 seconds for some reason
+                  }, 2000);
                   if (response.data.success == 'true') {
                   alertPopup.then(function(){
                     $state.go('app.listschools');
