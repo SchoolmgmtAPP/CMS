@@ -1,5 +1,5 @@
 angular.module('cmsapp.chatMenuCtrl', ['ionic'])
-.controller('chatMenuCtrl', function($scope, $timeout, $ionicScrollDelegate,$state,$location,chatservices,$filter) {
+.controller('chatMenuCtrl', function($scope, $timeout, $ionicScrollDelegate,$state,$location,chatservices,$filter,collaboratorServices) {
 
 	$scope.DetailPage = function(sender,receiver){
 		// $state.go('app.viewchat');
@@ -49,6 +49,11 @@ angular.module('cmsapp.chatMenuCtrl', ['ionic'])
 		}
 		console.log($scope.chatData);
 	});	
+
+	collaboratorServices.view_collaborator(data).then(function(response){
+		 	$scope.collaborator = response.data.response;
+		 	console.log($scope.collaborator);
+		 })
 
 	$scope.calcDiff = function(firstDate, secondDate){
     var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds    

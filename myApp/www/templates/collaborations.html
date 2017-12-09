@@ -13,7 +13,7 @@
       <ion-list can-swipe="true" ng-switch-when="collaborated">
           <ion-item class="sch_subitem frndPadd" ng-repeat="c in collaborator">
             <div class="row">
-              <div class=" col-10">
+              <div class="">
                 <img ng-src="{{c.image}}" class="colbImg" ng-if="c.image != ''">
                 <img src="img/user.png" class="colbImg" ng-if="c.image == ''">
               </div>
@@ -26,7 +26,7 @@
           </ion-item>
           <ion-item class="sch_subitem frndPadd" ng-if="collaborator.length < 1">
             <div class="row">
-              <div class=" col-10">
+              <div class="">
                 <img src="img/user.png" class="colbImg">
               </div>
               <div class="col col-80 frndName">
@@ -39,7 +39,7 @@
         <ion-list can-swipe="true" ng-switch-when="invited">
           <ion-item class="sch_subitem frndPadd" ng-repeat="u in visitors">
             <div class="row">
-              <div class=" col-10">
+              <div class="">
                 <img src="img/user.png" class="colbImg">
               </div>
               <div class="col col-80 frndName">
@@ -50,7 +50,7 @@
           </ion-item>
           <ion-item class="sch_subitem frndPadd" ng-if="visitors.length < 1">
             <div class="row">
-              <div class=" col-10">
+              <div class="">
                 <img src="img/user.png" class="colbImg">
               </div>
               <div class="col col-80 frndName">
