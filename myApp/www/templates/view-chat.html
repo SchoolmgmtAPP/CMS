@@ -27,11 +27,11 @@
       
             <div class="chat-message">
                 <ul class="chat"><!-- class="left clearfix" -->
-                    <li class="clearfix" ng-repeat="c in chat" ng-class="({{c.sender_id}} == {{sender}}) ? 'right':'left'">
+                    <li class="clearfix" ng-repeat="c in chat track by $index" ng-class="({{c.sender_id}} == {{sender}}) ? 'right':'left'">
                       <!-- <span class="chat-img pull-left">
                         <img src="https://bootdey.com/img/Content/user_3.jpg" alt="User Avatar">
                       </span> -->
-                      <div class="chat-body clearfix" on-long-press="itemOnLongPress(c.sender_id)" on-touch-end="itemOnTouchEnd(c.sender_id)">
+                      <div class="chat-body clearfix" on-long-press="itemOnLongPress({{c}})" on-touch-end="itemOnTouchEnd({{c.message_id}})">
                         <div class="header">
                           <strong class="primary-font">John Doe</strong>
                           <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> {{c.added_date}}</small>

@@ -73,7 +73,7 @@ angular.module('cmsapp.chatCtrl', ['ionic'])
   };
 })
 
-.controller('chatCtrl', function($scope, $timeout,$stateParams, $ionicScrollDelegate,chatservices) {
+.controller('chatCtrl', function($scope, $timeout,$stateParams,$ionicPopup, $ionicScrollDelegate,chatservices,$localStorage) {
 
   $scope.hideTime = true;
   
@@ -106,12 +106,6 @@ angular.module('cmsapp.chatCtrl', ['ionic'])
           t = d.split(":");
 
           if (typeof $scope.data.message != '' && $scope.data.message != undefined) {
-              
-                  $scope.chat.push({
-                  sender_id: $scope.sender,
-                  message_text: $scope.data.message,
-                  added_date: t[0]+":"+t[1]
-                });
 
               var chatMessage = {
                   sender_id : $scope.sender,
@@ -121,9 +115,33 @@ angular.module('cmsapp.chatCtrl', ['ionic'])
                   is_sender_deleted : 'N',
                   is_receiver_deleted : 'N'
               }
+              var message=$scope.data.message;
               chatservices.send_message(chatMessage).then(function(res){
                   console.log(res);
+                  console.log(message);
+                  $scope.last_message_id = res.message_id; 
+                 
+                    if (res.success =='true') {
+                       console.log($scope.last_message_id);
+                     console.log($scope.data.message);
+                     console.log($scope.sender);
+                       //$scope.$apply(function(){
+                         $scope.chat.push({
+                        message_id:$scope.last_message_id,
+                        sender_id: $scope.sender,
+                        message_text: message,
+                        added_date: t[0]+":"+t[1]
+                     // });
+                       });
+                    }
               });
+              // $scope.chat.push({
+              //           message_id:33,
+              //           sender_id: 64,
+              //           message_text: "GSDgsds",
+              //           added_date: "12-2-2007"
+              //         });
+              console.log($scope.last_message_id);              
         }
 
             
@@ -156,9 +174,46 @@ angular.module('cmsapp.chatCtrl', ['ionic'])
   $scope.myId = '12345';
   $scope.messages = [];
 
-    $scope.itemOnLongPress = function(id) {
+    $scope.itemOnLongPress = function(chatD) {
       console.log('Long press');
-    }
+      $scope.remove = chatD;
+      $scope.id=chatD.message_id;
+		
+       $scope.myPopup = $ionicPopup.show({
+        cssClass: 'Choose options',
+        scope: $scope,
+        template: '<div class="popmessage" >Where do you delete message? </div><br><button ng-click="deletemsg()" class="popup-buttons-picture-type" <b>Delete</b></button>&nbsp;<button ng-click="closePopup()" class="image-popup-cancel" <b>Cancel</b></button> ',
+    });
+       $scope.closePopup = function(){
+      // window.localStorage.setItem("isUploadingImage", "false");
+
+
+      $scope.myPopup.close();
+    };
+     $scope.deletemsg= function(){
+
+      var userid=localStorage.getItem('user_id');
+
+      var tmp={'message_id' :$scope.id,'user_id' : userid}
+      console.log(tmp);
+        chatservices.delete_message(tmp).then(function(response){
+             
+               console.log(response);
+               $scope.myPopup.close();             
+              console.log(response);
+          
+            })
+			 var index = $scope.chat.indexOf(chatD);
+			  console.log(index);
+			  $scope.chat.splice(index, 1);
+      $scope.myPopup.close();
+      }
+
+
+      // window.localStorage.setItem("isUploadingImage", "false");
+      // $scope.myPopup.close();
+    };
+    
 
     $scope.itemOnTouchEnd = function(id) {
       console.log('Touch end');

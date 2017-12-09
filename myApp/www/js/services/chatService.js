@@ -74,6 +74,31 @@ angular.module('cmsapp.chatservices', [])
           deffered.resolve(response);
       });
       return deffered.promise;
+  },
+    delete_message: function(tmp){
+     // console.log("asdasd");
+       var deffered = $q.defer();
+      $http({
+          url:Constants.API_URL['delete_message_url'],
+          method: "POST",
+          headers: {
+                    'Content-Type': Constants.API_HEADERS['content_type']
+                },
+          transformRequest: function(obj) {
+                            var str = [];
+                            for(var p in obj)
+                                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                            return str.join("&");
+                        },
+          data:tmp})
+      .success(function (response) {
+          console.log(response);
+          deffered.resolve(response);
+      }).error(function (response) {
+          console.log(response);
+          deffered.resolve(response);
+      });
+      return deffered.promise;
   }
 }
 });
