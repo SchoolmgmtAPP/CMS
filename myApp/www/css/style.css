@@ -577,6 +577,19 @@ img.photoImg.reportImg
     margin: auto;
 }
 /*verify code*/
+.messagePopup .popup-head
+{
+  display: none;
+}
+.messagePopup .popup-body
+{
+  text-align: center;
+  color: #1E307E;
+}
+.messagePopup .popup-buttons
+{
+  display: none;
+}
 .verifyLabel
 {
 	text-align: center;
