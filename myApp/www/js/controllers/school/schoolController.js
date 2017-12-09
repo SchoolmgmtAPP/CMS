@@ -14,6 +14,7 @@ angular.module('cmsapp.schoolCtrl', [])
     issueServices.view_school(datatoschool).then(function(response){
              $scope.SchoolList = response.data.response;
            });
+    
     $scope.listIssue=function(school_id){
       $state.go('app.listissues',{id: school_id.app_school_id});
 
