@@ -26,22 +26,22 @@
     <div class="row">
       
             <div class="chat-message">
-                <ul class="chat">
-                    <li class="left clearfix">
-                      <span class="chat-img pull-left">
+                <ul class="chat"><!-- class="left clearfix" -->
+                    <li class="clearfix" ng-repeat="c in chat track by $index" ng-class="({{c.sender_id}} == {{sender}}) ? 'right':'left'">
+                      <!-- <span class="chat-img pull-left">
                         <img src="https://bootdey.com/img/Content/user_3.jpg" alt="User Avatar">
-                      </span>
-                      <div class="chat-body clearfix">
+                      </span> -->
+                      <div class="chat-body clearfix" on-long-press="itemOnLongPress({{c}})" on-touch-end="itemOnTouchEnd({{c.message_id}})">
                         <div class="header">
                           <strong class="primary-font">John Doe</strong>
-                          <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> 12 mins ago</small>
+                          <small class="pull-right text-muted"><i class="fa fa-clock-o"></i> {{c.added_date}}</small>
                         </div>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          {{c.message_text}}
                         </p>
                       </div>
                     </li>
-                    <li class="right clearfix">
+                   <!--  <li class="right clearfix">
                       <span class="chat-img pull-right">
                         <img src="https://bootdey.com/img/Content/user_1.jpg" alt="User Avatar">
                       </span>
@@ -124,7 +124,7 @@
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. 
                         </p>
                       </div>
-                    </li>                    
+                    </li>           -->          
                 </ul>
             </div>
         </div>

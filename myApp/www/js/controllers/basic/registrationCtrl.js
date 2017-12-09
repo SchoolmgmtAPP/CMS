@@ -2,7 +2,7 @@ angular.module('cmsapp.registrationCtrl', [])
 
 .controller('registrationCtrl', function($scope,$state, $ionicModal,
 									 $timeout,$ionicLoading,$localStorage,
-									 Constants,Registration) {
+									 Constants,Registration,$rootScope) {
 
 	$scope.data = {
 			'name'			: '',
@@ -23,6 +23,7 @@ angular.module('cmsapp.registrationCtrl', [])
           showDelay: 0
         });
 
+	    	$rootScope.email_address = $scope.data.mail;
 		var tmp = {
 			name			: $scope.data.name,
 			contact_number  : $scope.data.contact_number,

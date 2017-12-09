@@ -7,7 +7,7 @@
 	  		<div class="col">
 	  		<!-- <h3 class="issHead">School Name</h3> -->
           <button class="button button-dropdown" modal-select ng-model="data.schoolid" options="schools" modal-title="Select school" on-select="changeSchool(newValue, oldValue)">
-              {{data.schoolname}}
+              {{schoolName}}
               <div class="option">
                   {{option.schoolname}}
               </div>
@@ -17,20 +17,20 @@
 		</div>
 		<hr>
   		<div class="row">
-  			<div class="col col-33 imgCol imgCol" ui-sref="app.viewissue">
+  			<div class="col col-33 imgCol imgCol" ui-sref="app.viewissue" ng-repeat="i in issues"  ng-if="issues.length > 1">
   				<img src="img/issue1.png" class="issueImg">
-  				<label>25/11/2016</label>
+  				<label>{{i.date1 | date:"M/d/yyyy"}}</label>
   			</div>
-  			<div class="col col-33 imgCol imgCol" ui-sref="app.viewissue">
-  				<img src="img/issue2.png" class="issueImg">
-  				<label>25/11/2016</label>
-  			</div>
-  			<div class="col col-33 imgCol" ui-sref="app.viewissue">
+  			
+  			<!-- <div class="col col-33 imgCol" ui-sref="app.viewissue">
   				<img src="img/issue3.png" class="issueImg">
   				<label>25/11/2016</label>
-  			</div>  			
+  			</div>  			 -->
   		</div>
-  		<div class="row RowSpace">
+      <div class="row" ng-if="issues.length < 1">
+          <label>No Issues Regarding this school</label>
+        </div>
+  		<!-- <div class="row RowSpace">
   			<div class="col col-33 imgCol" ui-sref="app.viewissue">
   				<img src="img/issue4.png" class="issueImg">
   				<label>25/11/2016</label>
@@ -43,7 +43,7 @@
   				<img src="img/issue6.png" class="issueImg">
   				<label>25/11/2016</label>
   			</div>
-  		</div>
+  		</div> -->
   	</ion-content>
 
 </ion-view>

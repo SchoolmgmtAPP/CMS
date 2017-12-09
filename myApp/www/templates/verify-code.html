@@ -2,7 +2,7 @@
 	<ion-content>
 		<div class="row">
 			<div class="col ColMargin">
-				<img src="img/CMS.png" class="RegLogo">
+				<img src="img/CMS.png" class="RegLogo" ui-sref="login">
 			</div>
 		</div>
 		<form name="varificationForm">
@@ -21,7 +21,7 @@
 					<button class="button button-positive sendCode" ng-click="varifyCode(varificationForm)">
 						Verify Code
 					</button>
-					<button class="button button-clear button-block sign_btn" ui-sref="#">
+					<button class="button button-clear button-block sign_btn" ng-click="resend_code()">
 			           Not received code? Resend now
 			        </button>
 			</div>
