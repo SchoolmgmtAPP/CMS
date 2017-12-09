@@ -1,8 +1,20 @@
 angular.module('cmsapp.viewIssueCtrl', [])
-.controller('viewIssueCtrl', function($scope, $stateParams) {
+.controller('viewIssueCtrl', function($scope,$rootScope, $stateParams,issueServices) {
 
   $scope.startSC='startSC';
-   
+console.log($stateParams.issue_id);   
+    var data ={
+      issue_id : $stateParams.issue_id 
+    }
+    issueServices.getIssue_details(data).then(function(response){
+      $scope.issueData        = response.data.response.issue_data;
+      $rootScope.Engage       = response.data.response.engage;
+      $rootScope.feedback     = response.data.response.feedback;
+      $rootScope.issue_access = response.data.response.issue_access;
+      $rootScope.issue_story  = response.data.response.issue_story;
+      $rootScope.resolve      = response.data.response.resolve;
+      console.log($scope.issueData);
+    });  
 /*View issue accordion*/
  $scope.groups2 = [];
   $scope.groups2 = [
@@ -33,6 +45,7 @@ angular.module('cmsapp.viewIssueCtrl', [])
   {
     $scope.startSC="";
   }
+
 
 
 });

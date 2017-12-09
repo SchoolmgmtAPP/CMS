@@ -39,7 +39,9 @@ angular.module('cmsapp',[
 	'cmsapp.collaboratorlistCtrl',
 	'cmsapp.viewmandateanalysisCtrl',
 	'cmsapp.chatservices',
-	'cmsapp.changepassCtrl'
+	'cmsapp.changepassCtrl',
+	'cmsapp.identifyconcernedCtrl',
+	'cmsapp.reviewinfoCtrl'
 ])
 
 .constant('Constants', {
@@ -80,7 +82,8 @@ angular.module('cmsapp',[
 		send_message_url		: mainUrl + 'chat/send_message',
 		resetpassword_data_url	: mainUrl + 'login/resetpassword_data',
 		remove_school_url   	: mainUrl + 'school/remove_school',
-		delete_message_url		: mainUrl + 'chat/delete_message'
+		delete_message_url		: mainUrl + 'chat/delete_message',
+		view_issue_details_url	: mainUrl + 'issue/view_issue_details'
     },
 
     API_HEADERS: {
@@ -311,7 +314,7 @@ angular.module('cmsapp',[
 	    }
 	  })
 	.state('app.viewissue', {
-	    url: '/viewissue',
+	    url: '/viewissue/:issue_id',
 	    views: {
 	      'menuContent': {
 	        templateUrl: 'templates/viewissue.html',
@@ -334,7 +337,9 @@ angular.module('cmsapp',[
 	    url: '/identifyconcerned',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/identifyconcerned.html'
+	        templateUrl: 'templates/identifyconcerned.html',
+	        controller : 'identifyconcernedCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -384,7 +389,9 @@ angular.module('cmsapp',[
 	    url: '/reviewinfo',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/review-information.html'
+	        templateUrl: 'templates/review-information.html',
+	        controller : 'reviewinfoCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })

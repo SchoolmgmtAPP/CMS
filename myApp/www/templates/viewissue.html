@@ -5,7 +5,7 @@
 	<ion-content scroll="true">
 		<div class="row issPadd">
 	  		<div class="col">
-	  		<h3 class="issHead">School Name</h3>
+	  		<h3 class="issHead">{{schoolName}}</h3>
 	  		</div>
 	  		
 		</div>
@@ -17,11 +17,17 @@
 				</div>
 				<div class="col col-50">
 					<h5>Description</h5>
+						<p>{{issueData.title}}</p>
 					<h5>Service category</h5>
+						<p>{{issueData.service_category_name}}</p>
 					<h5>Service item</h5>
+						<p>{{issueData.service_item_name}}</p>
 					<h5>Issue type</h5>
+						<p>{{issueData.issue_type_name}}</p>
 					<h5>Mandated agency</h5>
+						<p>{{issueData.mandated_agency}}</p>
 					<h5>Date spotted</h5>
+						<p>{{issueData.added_date}}</p>
 				</div>
 			</div>
 		</div>

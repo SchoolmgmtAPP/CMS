@@ -17,15 +17,11 @@
 		</div>
 		<hr>
   		<div class="row">
-  			<div class="col col-33 imgCol imgCol" ui-sref="app.viewissue" ng-repeat="i in issues"  ng-if="issues.length > 1">
+  			<div class="col col-33 imgCol imgCol" ng-repeat="i in issues" ui-sref="app.viewissue({'issue_id':i.issue_id})">
   				<img src="img/issue1.png" class="issueImg">
   				<label>{{i.date1 | date:"M/d/yyyy"}}</label>
   			</div>
   			
-  			<!-- <div class="col col-33 imgCol" ui-sref="app.viewissue">
-  				<img src="img/issue3.png" class="issueImg">
-  				<label>25/11/2016</label>
-  			</div>  			 -->
   		</div>
       <div class="row" ng-if="issues.length < 1">
           <label>No Issues Regarding this school</label>
