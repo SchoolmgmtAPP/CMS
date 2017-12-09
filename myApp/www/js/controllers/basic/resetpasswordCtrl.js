@@ -3,7 +3,11 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 .controller('resetpasswordCtrl', function($scope,$state, $ionicModal,
 										 $timeout,Constants,ChangePwdService,
 										 ResetPasswordService,VerifyCodeService,
+<<<<<<< HEAD
+										 $ionicLoading,$ionicPopup,$timeout) {
+=======
 										 $ionicLoading,$ionicPopup,$rootScope) {
+>>>>>>> origin/master
 
 	$scope.data = {
 			'email_address'	: '',
@@ -61,9 +65,12 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 			$ionicLoading.hide();
 			var alertPopup = $ionicPopup.alert({
 		           title: response.success == 'true' ? 'Success' : 'Fail',
-		           template: response.message
+		           template: response.message,
+		           cssClass:"messagePopup"
 		         });
-
+			$timeout(function() {
+			     alertPopup.close(); //close the popup after 3 seconds for some reason
+			}, 1000);
 			if (response.success == 'true') {
 				alertPopup.then(function(res) {
 			 		$state.go('login');
