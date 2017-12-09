@@ -3,11 +3,8 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 .controller('resetpasswordCtrl', function($scope,$state, $ionicModal,
 										 $timeout,Constants,ChangePwdService,
 										 ResetPasswordService,VerifyCodeService,
-<<<<<<< HEAD
-										 $ionicLoading,$ionicPopup,$timeout) {
+										 $ionicLoading,$ionicPopup,$rootScope,$timeout) {
 =======
-										 $ionicLoading,$ionicPopup,$rootScope) {
->>>>>>> origin/master
 
 	$scope.data = {
 			'email_address'	: '',
