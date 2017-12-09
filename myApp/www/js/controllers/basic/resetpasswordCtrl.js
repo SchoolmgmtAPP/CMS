@@ -27,8 +27,12 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 				$rootScope.loadingOff();
 			var alertPopup = $ionicPopup.alert({
 		           title: response.success == 'true' ? 'Success' : 'Fail',
-		           template: response.message
+		           template: response.message,
+		           cssClass:"messagePopup"
 		         });
+			$timeout(function() {
+			     	alertPopup.close(); //close the popup after 3 seconds for some reason
+				}, 2000);
 
 			if (response.success == 'true') {
 				alertPopup.then(function(res) {
@@ -66,7 +70,7 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 		         });
 			$timeout(function() {
 			     alertPopup.close(); //close the popup after 3 seconds for some reason
-			}, 1000);
+			}, 2000);
 			if (response.success == 'true') {
 				alertPopup.then(function(res) {
 			 		$state.go('login');
@@ -104,8 +108,12 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 			 }else{
 			 	 var alertPopup = $ionicPopup.alert({
 		           title: 'Error',
-		           template: response.message
+		           template: response.message,
+		           cssClass:"messagePopup"
 		         });
+		        $timeout(function() {
+			     	alertPopup.close(); //close the popup after 3 seconds for some reason
+				}, 2000);
 			 }
 		});
 	}
@@ -131,14 +139,19 @@ angular.module('cmsapp.resetpasswordCtrl', [])
 				if(response.success == 'true'){
 					$ionicPopup.alert({
 			           title: 'Success',
-			           template: response.message
+			           template: response.message,
+			           cssClass:"messagePopup"
 			         });
 				}else{
 					$ionicPopup.alert({
 			           title: 'fail',
-			           template: 'Please try again'
+			           template: 'Please try again',
+			           cssClass:"messagePopup"
 			         });
 				}
+				$timeout(function() {
+			     	alertPopup.close(); //close the popup after 3 seconds for some reason
+				}, 2000);
 		});
 	}
 	  

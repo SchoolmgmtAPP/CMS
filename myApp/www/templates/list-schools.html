@@ -9,7 +9,7 @@
 			</div>
 		        <ion-item ui-sref="app.listissues" class="sch_subitem" ng-repeat="list in SchoolList" ng-click="listIssue(list)">
 		            {{list.school_name}}
-		            <ion-option-button class="button-positive icon ion-edit"></ion-option-button>
+		            <!-- <ion-option-button class="button-positive icon ion-edit"></ion-option-button> -->
 		            <ion-option-button class="button-assertive icon ion-trash-a" ng-click="delete_school(list)"></ion-option-button>
 		        </ion-item>
 		       <!--  <ul ng-repeat="(division_id, value) in SchoolList | groupBy: 'division_id' ">
