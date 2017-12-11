@@ -1,9 +1,15 @@
-<ion-view view-title="Dashboard">
-<ion-nav-buttons side="right">
-      <button class="button button-icon" ng-click="" ui-sref="app.viewprofile"><img src="img/man.png"  class="notif_user1">
-</button>
+<ion-view view-title="Dashboard" hide-back-button="true">
+ <!--  <ion-nav-bar class="bar-stable bar bar-header"> -->
+  <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
   </ion-nav-buttons>
-  	<ion-content scroll="false">
+  <ion-nav-buttons side="right">
+        <button class="button button-icon" ng-click="" ui-sref="app.viewprofile"><img src="img/man.png"  class="notif_user1">
+        </button>
+  </ion-nav-buttons>
+ <!--    -->
+  <ion-content scroll="false">
   	<div class="row">
   		<div class="col">
   			<h3 class="dash_title">Rating Chart</h3>
