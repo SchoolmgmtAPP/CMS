@@ -89,7 +89,8 @@ angular.module('cmsapp',[
 		delete_message_url		: mainUrl + 'chat/delete_message',
 		view_issue_details_url	: mainUrl + 'issue/view_issue_details',
 		upload_engagedform_url	: mainUrl + 'solution_chaser/upload_engagedform',
-		engagepeople_saved_url	: mainUrl + 'solution_chaser/engagepeople_savedata'
+		engagepeople_saved_url	: mainUrl + 'solution_chaser/engagepeople_savedata',
+		save_accessinfo_url		: mainUrl + 'accsessinfo/save_accessinfo'
     },
 
     API_HEADERS: {

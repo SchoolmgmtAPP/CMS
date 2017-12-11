@@ -8,7 +8,7 @@
 						<div class="item reviewque">
 						    <h2>Are available info useful?</h2>
 						    <label class = "toggle toggle-energized reviewqueToggle">
-					         <input type = "checkbox" checked="" />
+					         <input type = "checkbox"  ng-checked="{{useful}}" ng-model="status1" ng-click="stateChanged1(status1)"/>
 					         <div class = "track">
 					            <div class = "handle"></div>
 					         </div>
@@ -20,7 +20,7 @@
 						<div class="item reviewque">
 						     <h2>Was issue mentioned in any of the accessed info?</h2>
 						    <label class = "toggle toggle-energized reviewqueToggle">
-					         <input type = "checkbox" />
+					         <input type = "checkbox" ng-checked="{{mention}}" ng-model="status2" ng-click="stateChanged2(status2)"/>
 					         <div class = "track">
 					            <div class = "handle"></div>
 					         </div>
@@ -29,7 +29,7 @@
 						<div class="item reviewque">
 						    <h2>Does available info identify the office responsible for the issue?</h2>
 						    <label class = "toggle toggle-energized reviewqueToggle">
-					         <input type = "checkbox" />
+					         <input type = "checkbox" ng-checked="{{office_res}}" ng-click="stateChanged3(status3)" ng-model="status3"/>
 					         <div class = "track">
 					            <div class = "handle"></div>
 					         </div>
@@ -37,7 +37,7 @@
 						</div>
 					</div>
 						
-					<button class="button button-block button-energized sign_btn">
+					<button class="button button-block button-energized sign_btn" ng-click="save()">
 			  		Save
 					</button>
 				</div>	
