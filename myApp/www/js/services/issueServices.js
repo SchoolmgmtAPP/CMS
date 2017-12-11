@@ -163,6 +163,46 @@ angular.module('cmsapp.issueServices', [])
         }).error(function (response) {
             console.log(response);
         });
+      },
+      upload_engagedform: function(data1){
+     return $http({
+          url:Constants.API_URL['upload_engagedform_url'],
+          method: "POST",
+          headers: {
+                    'Content-Type': Constants.API_HEADERS['content_type']
+                },
+          transformRequest: function(obj) {
+                            var str = [];
+                            for(var p in obj)
+                                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                            return str.join("&");
+                        },
+            data : data1
+          }).success(function (response) {
+            console.log(response);
+        }).error(function (response) {
+            console.log(response);
+        });
+      },
+      engagepeople_saved: function(data1){
+     return $http({
+          url:Constants.API_URL['engagepeople_saved_url'],
+          method: "POST",
+          headers: {
+                    'Content-Type': Constants.API_HEADERS['content_type']
+                },
+          transformRequest: function(obj) {
+                            var str = [];
+                            for(var p in obj)
+                                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                            return str.join("&");
+                        },
+            data : data1
+          }).success(function (response) {
+            console.log(response);
+        }).error(function (response) {
+            console.log(response);
+        });
       }
 	}
 });

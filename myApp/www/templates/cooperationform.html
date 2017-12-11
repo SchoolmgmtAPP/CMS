@@ -7,8 +7,11 @@
 					<h3 class="PageTitle">Cooperation Form</h3>
 
 					<button class="button button-energized sign_btn downloadBtn">
-			  		Download
+			  		Upload
 					</button>
+					 <!-- <input type="file" id="fileinput" name="file" ng-model="fileToUpload" onchange="angular.element(this).scope().fileNameChanged(this)"/> -->
+					 
+					 <input type="file" id="fileinput" name="file" ng-model="files" on-file-change="onFilesSelected" />
 				</div>	
 			</div>
 	</ion-content>
