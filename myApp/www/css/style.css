@@ -82,6 +82,12 @@
 	background: #1E307E;
 	border:0;
 }
+.keyboard-open .tabs{
+  display:none;
+  }
+.keyboard-open .has-footer{
+ bottom:0;
+ }
 .ta_itemColor
 {
 	color:#FFCD00;
@@ -634,6 +640,7 @@ img.photoImg.reportImg
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  display: block;
 }
 .startSC
 {
