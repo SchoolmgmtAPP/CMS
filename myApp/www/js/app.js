@@ -41,7 +41,10 @@ angular.module('cmsapp',[
 	'cmsapp.chatservices',
 	'cmsapp.changepassCtrl',
 	'cmsapp.identifyconcernedCtrl',
-	'cmsapp.reviewinfoCtrl'
+	'cmsapp.reviewinfoCtrl',
+	'cmsapp.statementCtrl',
+	'cmsapp.cooperationCtrl',
+	'cmsapp.accessidentifiedCtrl',
 ])
 
 .constant('Constants', {
@@ -83,7 +86,9 @@ angular.module('cmsapp',[
 		resetpassword_data_url	: mainUrl + 'login/resetpassword_data',
 		remove_school_url   	: mainUrl + 'school/remove_school',
 		delete_message_url		: mainUrl + 'chat/delete_message',
-		view_issue_details_url	: mainUrl + 'issue/view_issue_details'
+		view_issue_details_url	: mainUrl + 'issue/view_issue_details',
+		upload_engagedform_url	: mainUrl + 'solution_chaser/upload_engagedform',
+		engagepeople_saved_url	: mainUrl + 'solution_chaser/engagepeople_savedata'
     },
 
     API_HEADERS: {
@@ -347,7 +352,9 @@ angular.module('cmsapp',[
 	    url: '/statementform',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/statement-form.html'
+	        templateUrl: 'templates/statement-form.html',
+	        controller : 'statementCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -363,7 +370,9 @@ angular.module('cmsapp',[
 	    url: '/cooperationform',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/cooperationform.html'
+	        templateUrl: 'templates/cooperationform.html',
+	        controller : 'cooperationCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -381,7 +390,9 @@ angular.module('cmsapp',[
 	    url: '/accessidentifiedinfo',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/access-identified-info.html'
+	        templateUrl: 'templates/access-identified-info.html',
+	        controller : 'accessidentifiedCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
