@@ -3,7 +3,7 @@
 		  	
 		  	<form name="addIssueForm">
 		  	<div class="list">
-				<label class="item item-input item-floating-label">
+				<div class="item item-input item-floating-label">
 				    <span class="input-label labelColor">School Name</span>
 				    <div angucomplete-alt id="txtAutocomplete" placeholder="		Type School Name" pause="100"
 	                 selected-object="afterSchool" local-data="SchoolList" search-fields="school_name"
@@ -14,7 +14,7 @@
 		        </div>
 
 
-				</label>
+				</div>
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Description</span>
 				    <!-- <input type="text" placeholder="School Name"> -->
@@ -25,7 +25,7 @@
 		        </div>
 
 				</label>
-				<label class="item item-input item-floating-label">
+				<div class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Service Category</span>
 				    <div angucomplete-alt id="txtAutocomplete" placeholder="		Type Service Category" pause="100"
 	                 selected-object="afterCategory" local-data="serviceCategory" search-fields="title"
@@ -35,8 +35,8 @@
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.service_category.$valid">Please Enter Service Category</div>
 		        </div>
 
-				</label>
-				<label class="item item-input item-floating-label">
+				</div>
+				<div class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Service Item</span>
 				    <!-- <input type="text" placeholder="Service Item"> -->
 				    <div angucomplete-alt id="txtAutocomplete" placeholder="Type Service Item" pause="100"
@@ -47,8 +47,8 @@
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.service_item.$valid">Please Enter Service Item</div>
 		        </div>
 
-				</label>
-				<label class="item item-input item-floating-label">
+				</div>
+				<div class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Issue Type</span>
 				    <!-- <input type="text" placeholder="Issue Type"> -->
 				    <div angucomplete-alt id="txtAutocomplete" placeholder="Type Issue Type" pause="100"
@@ -59,7 +59,7 @@
 		            <div ng-message="required" class="error message"  ng-show="!addIssueForm.issue_type.$valid">Please Enter Issue Type</div>
 		        </div>
 
-				</label>
+				</div>
 				<label class="item item-input item-floating-label">
 				    <span class="input-label labelColor">Mandated Agency</span>
 				    <input type="text" placeholder="Mandated Agency" name="mandatary_agency" ng-model="data.mandatary_agency" required="">

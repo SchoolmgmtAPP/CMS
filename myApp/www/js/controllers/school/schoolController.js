@@ -12,7 +12,7 @@ angular.module('cmsapp.schoolCtrl', [])
     }
     
     issueServices.view_school(datatoschool).then(function(response){
-             $scope.SchoolList = response.data.response;
+             $rootScope.SchoolList = response.data.response;
            });
     
     $scope.listIssue=function(school_id){
@@ -29,9 +29,9 @@ angular.module('cmsapp.schoolCtrl', [])
         
       issueServices.delete_school(data).then(function(res){
         // console.log(res);
-        var index = $scope.SchoolList.indexOf(app_school_id);
+        var index = $rootScope.SchoolList.indexOf(app_school_id);
           console.log(index);
-          $scope.SchoolList.splice(index, 1);
+          $rootScope.SchoolList.splice(index, 1);
 
       });
     }
