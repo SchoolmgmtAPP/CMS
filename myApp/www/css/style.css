@@ -626,11 +626,14 @@ img.photoImg.reportImg
 .button-dropdown
 {
 	width: 100%;
-    background: #fff;
-    color: #FFCD00 !important;
-    text-align: left;
-    font-weight: bold;
-    font-size: 20px;
+  background: #fff;
+  color: #FFCD00 !important;
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .startSC
 {

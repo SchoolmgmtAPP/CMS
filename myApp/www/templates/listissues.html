@@ -6,10 +6,10 @@
   		<div class="row issPadd">
 	  		<div class="col">
 	  		<!-- <h3 class="issHead">School Name</h3> -->
-          <button class="button button-dropdown" modal-select ng-model="data.schoolid" options="schools" modal-title="Select school" on-select="changeSchool(newValue, oldValue)">
+          <button class="button button-dropdown" modal-select ng-model="data.schoolid" options="SchoolList" modal-title="Select school" on-select="changeSchool(newValue, oldValue)">
               {{schoolName}}
               <div class="option">
-                  {{option.schoolname}}
+                  {{option.school_name}}
               </div>
           </button>
 	  		</div>
