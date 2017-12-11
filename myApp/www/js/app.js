@@ -13,6 +13,7 @@ angular.module('cmsapp',[
 	'ionic-modal-select',
 	'ngStorage',
 	'ui.bootstrap',
+	'ngSanitize',
 	'cmsapp.chatCtrl',
 	'cmsapp.AppCtrl',
 	'cmsapp.schoolCtrl',

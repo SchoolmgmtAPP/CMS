@@ -1,15 +1,34 @@
 angular.module('cmsapp.viewmandateanalysisCtrl', [])
 .controller('viewmandateanalysisCtrl', function($scope,$rootScope, $stateParams,
                                     $ionicLoading,$ionicPopup,$state,
-                                    mandatedlistServices) {
+                                    mandatedlistServices,$filter,$sce) {
   	var data = {
         service_item_id : $stateParams.service_item_id,
         issue_id        : $stateParams.issue_id
-      }
+      };
+      $scope.data={};
        mandatedlistServices.view_mandated_analysis(data).then(function(response){
-             $scope.listData = response.data.response[0];
-             $rootScope.policy_quote = $scope.listData.policy_quote;
-             $rootScope.masers_answer= $scope.listData.masers_answer;  
+             console.log(response.data.response.length);
+             if(response.data.response.length>0)
+             {
+
+                $scope.isMandateExist=true;
+                $scope.listData =response.data.response[0];
+                
+                // $scope.data.policy_quote = $filter('limitTo')($scope.listData.policy_quote, 50);
+                // $scope.data.policy_quote= $sce.trustAsHtml($scope.data.policy_quote);
+                // $scope.data.masers_answer=$filter('limitTo')( $scope.listData.masers_answer, 50); 
+                //  $scope.data.masers_answer=$sce.trustAsHtml($scope.data.masers_answer);
+
+
+               
+             }
+             else
+             {
+                $scope.isMandateExist=false;
+
+             }
+             
            });
 
 })

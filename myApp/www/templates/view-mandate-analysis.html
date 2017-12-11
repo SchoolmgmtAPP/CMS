@@ -2,46 +2,47 @@
 	<ion-content>
 		<div class="row responsive-sm">
 		<div class="col">
-		<ul class="list">
+		<ul class="list" ng-show="isMandateExist" >
 			<label class="item item-input">
 				<span class="input-label spanMandate">Service Classification</span>
-			    <span class="spanMandaet2">{{listData.category_name}}</span>
+			    <span class="spanMandaet2" ng-bind-html="listData.category_name"></span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Service Item</span>
-			    <span class="spanMandaet2">{{listData.service_item_name}}</span>
+			    <span class="spanMandaet2" ng-bind-html="listData.service_item_name"></span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Issues</span>
-			    <span class="spanMandaet2">{{listData.issue_name}}</span>
+			    <span class="spanMandaet2" ng-bind-html="listData.issue_name"></span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Accountable Office</span>
-			    <span class="spanMandaet2">{{listData.accountable_office}}</span>
+			    <span class="spanMandaet2" ng-bind-html="listData.accountable_office"></span>
 			</label>
 			<label class="item item-input ">
 			   <span class="input-label spanMandate">Request for Information</span>
-			    <span class="spanMandaet2">{{listData.request_for_information}}</span>
+			    <span class="spanMandaet2" ng-bind-html="listData.request_for_information"></span>
 			</label>
 			<label class="item item-input">
 			   	<span class="input-label spanMandate">Reference Policy</span>
-			    <span class="spanMandaet2">{{listData.reference_policy}}<br/>
+			    <span class="spanMandaet2" ng-bind-html="listData.reference_policy">
 			    </span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Policy Links</span>
-			    <span  class="spanMandaet2">{{listData.policy_links}}</span>
+			    <span  class="spanMandaet2" ng-bind-html="listData.policy_links"></span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">Policy Quote</span>
-			    <span class="spanMandaet2">{{listData.policy_quote | limitTo: 40}}
-			    <button class="button button-clear button-small sign_btn read_more" ui-sref="app.policyquote">{{listData.policy_quote.length > 20 ? '...read more' : ''}}</button></span>
+			    <span class="spanMandaet2"  ng-bind-html="listData.policy_quote"  ><!-- {{data.policy_quote}} --><!-- 
+			    <button class="button button-clear button-small sign_btn read_more" ui-sref="app.policyquote">{{listData.policy_quote.length > 20 ? '...read more' : ''}}</button> --></span>
 			</label>
 			<label class="item item-input">
 			   <span class="input-label spanMandate">MASER's ANSWER</span>
-			    <span class="spanMandaet2">{{listData.masers_answer | limitTo: 40}}<button class="button button-clear button-small sign_btn read_more" ui-sref="app.maseranswer">{{listData.masers_answer.length > 20 ? '...read more' : ''}}</button></span>
+			    <span class="spanMandaet2" ng-bind-html="listData.masers_answer"><!-- {{data.masers_answer}} --><!-- <button class="button button-clear button-small sign_btn read_more" ui-sref="app.maseranswer">{{listData.masers_answer.length > 20 ? '...read more' : ''}}</button -->></span>
 			</label>
 		</ul>
+		<p ng-show="!isMandateExist" style="text-align: center;">No mandate analysis exist for this issue.</p>
 		</div>
 	</ion-content>
 </ion-view>

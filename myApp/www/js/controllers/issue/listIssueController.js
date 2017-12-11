@@ -2,12 +2,29 @@ angular.module('cmsapp.listIssueCtrl', [])
 .controller('listIssueCtrl', function($scope, $stateParams,issueServices, $rootScope) {
 
   console.log($stateParams.id);
-
-  var data ={
-  	school_id : $stateParams.id
+  $scope.data={};
+  if($stateParams.id=="")
+  {
+    var datatoschool ={
+      user_id : localStorage.getItem('user_id')
+    }
+    
+    issueServices.view_school(datatoschool).then(function(response){
+        $rootScope.SchoolList = response.data.response;       
+       
+        $scope.data.school_id=$rootScope.SchoolList[0].app_school_id;
+        $rootScope.schoolName=$rootScope.SchoolList[0].school_name;
+    });
   }
-   $scope.data={};
-  if ($stateParams.id) {
+  else
+  {
+      $scope.data.school_id=$stateParams.id;
+  }
+  var data ={
+  	school_id : $scope.data.school_id
+  }
+  
+  if ($scope.data.school_id) {
   	issueServices.get_issue_by_school(data).then(function(res){
   		console.log(res);
   		$scope.issues = res.data.response;

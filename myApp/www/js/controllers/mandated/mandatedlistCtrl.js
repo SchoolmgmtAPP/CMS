@@ -2,13 +2,20 @@ angular.module('cmsapp.mandatedlistCtrl', [])
 .controller('mandatedlistCtrl', function($scope, $stateParams,
                                     $ionicLoading,$ionicPopup,$state,mandatedlistServices) {
    $scope.groups = [];
-  
+    $scope.isdisabled=true;
     mandatedlistServices.get_service_category_byItem().then(function(response){
              $scope.groups = response.data.response;
            });
     mandatedlistServices.get_issue_byId().then(function(response){
              $scope.groups1 = response.data.response;
            });
+    $scope.$watchCollection('[service_item_id, issue_id]', function(newValues){
+      console.log('*** Watched has been fired. ***');
+      if(typeof newValues[0] !== 'undefined' && typeof newValues[1] !== 'undefined')
+      {
+          $scope.isdisabled=false;
+      }
+    });
   
   /*
    * if given group is the selected group, deselect it

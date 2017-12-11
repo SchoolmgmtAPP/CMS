@@ -3,8 +3,8 @@
     <div class="row">
     	<div class="col">
     <div class="item item-divider divHead">
-	Identify service category and service item			
-	</div>
+	   Identify service category and service item			
+	   </div>
       <ion-list>
         <div ng-repeat="group in groups">
           <ion-item class="item-stable"
@@ -61,7 +61,7 @@
       </div>
 	</div>
   <div class="row">   
-      <button class="button button-energized button-block sign_btn" ui-sref="app.viewmandateanalysis" ng-click="view_mandate()">
+      <button class="button button-energized button-block sign_btn" ui-sref="app.viewmandateanalysis" ng-click="view_mandate()" ng-disabled="isdisabled">
         View Mandate Analysis
       </button>
   </div>
