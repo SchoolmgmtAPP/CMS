@@ -16,7 +16,9 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [],
+  "cordovaPlatforms": [
+    "android"
+  ],
   "dependencies": {
     "cordova-plugin-camera": "^3.0.0"
   },

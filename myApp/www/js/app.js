@@ -119,6 +119,9 @@ angular.module('cmsapp',[
 	}
 })
 .run(function($ionicPlatform,$location,$ionicHistory) {
+   window.addEventListener('native.keyboardshow', function(){
+    document.body.classList.add('keyboard-open');
+  });
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

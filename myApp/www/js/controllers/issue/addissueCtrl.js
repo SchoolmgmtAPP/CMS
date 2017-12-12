@@ -2,25 +2,14 @@ angular.module('cmsapp.addissueCtrl', [])
 .controller('addissueCtrl', function($scope,$state, $stateParams,issueServices,
                                   $ionicLoading, $ionicPopup,$rootScope,$timeout) {
 
-  $scope.data={
-    mandatary_agency:'',
-    description:''
-  };
+    $scope.data={
+      mandatary_agency:'',
+      description:''
+    };
 
-  $scope.submitted= false;
+    $scope.submitted= false;
     $scope.selected = '';
-     
-     $scope.loading = function(){
-      $ionicLoading.show({
-          content: 'Loading',
-          animation: 'fade-in',
-          showBackdrop: true,
-          maxWidth: 200,
-          showDelay: 0
-        });
-    }
-    
-    $scope.loading();
+    $rootScope.loadingOn();
     var datatoschool ={
       user_id : localStorage.getItem('user_id')
     }
@@ -37,9 +26,10 @@ angular.module('cmsapp.addissueCtrl', [])
             });
            issueServices.get_issue_type().then(function(response){
                    $scope.IssueType = response.data.response;
+                    $rootScope.loadingOff();
             });
 
-              $ionicLoading.hide();
+             
       }     
     $scope.autoload();
      $scope.SelectedCountry = null;
@@ -57,7 +47,9 @@ angular.module('cmsapp.addissueCtrl', [])
               image           : $scope.cameraimage64
             };
             console.log(data);
+            $rootScope.loadingOn();
             issueServices.saveissue(data).then(function(response){
+               $rootScope.loadingOff();
                if (response.data.success = 'true') {
                 var alertPopup = $ionicPopup.alert({
                    title: 'success',
@@ -70,6 +62,17 @@ angular.module('cmsapp.addissueCtrl', [])
                 alertPopup.then(function(){
                   $state.go('app.listissues');
                 })
+              }
+              else
+              {
+                 var alertPopup = $ionicPopup.alert({
+                   title: 'success',
+                   template: response.data.message,
+                   cssClass:"messagePopup"
+                 });
+                   $timeout(function() {
+                      alertPopup.close(); //close the popup after 3 seconds for some reason
+                  }, 2000);
               }
             })
         }
