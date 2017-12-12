@@ -10,10 +10,10 @@
 						<ion-radio ng-model="choice" ng-value="'Other means'">Other means
 						</ion-radio>
 						<label class="item item-input">
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="abc.other" placeholder="other">
 					  	</label>
 					</ion-list>
-					<button class="button button-energized button-block sign_btn">
+					<button class="button button-energized button-block sign_btn" ng-click="save(choice)">
 			  		Save
 				</button>
 				</div>

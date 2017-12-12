@@ -5,10 +5,17 @@
 				<p class="padBottom">Write report</p>
 				<p class="padBottom">Template</p>
 				<p class="padBottom">Date</p>
-				<div class="padBottom">We submit the issue of <strong></strong> in X School in <strong></strong>. The issue has existed for <strong></strong> now. <strong>Other details</strong> . We seek your help as the office with the mandate to address it.Hope you can look into it. Thank you.
+				<div class="padBottom">We submit the issue of <strong>{{text[3]}}</strong> in X School in <strong>{{text[2]}}</strong>. The issue has existed for <strong>{{text[1]}}</strong> now. <strong>{{text[0]}}</strong> . We seek your help as the office with the mandate to address it.Hope you can look into it. Thank you.
 				</div>
 				<p class="padBottom">Signed:</p>
 			</div>	
+		</div>
+		<div class="row">
+			<!-- <div class="col col-50"> -->
+				<button class="button button-energized button-block sign_btn" ui-sref="app.feedbackreport">
+			  		Edit Report
+				</button>
+			<!-- </div> -->
 		</div>
 	</ion-content>
 </ion-view>

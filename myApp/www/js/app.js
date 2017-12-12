@@ -46,6 +46,11 @@ angular.module('cmsapp',[
 	'cmsapp.statementCtrl',
 	'cmsapp.cooperationCtrl',
 	'cmsapp.accessidentifiedCtrl',
+	'cmsapp.analyzeissuedCtrl',
+	'cmsapp.previewreportCtrl',
+	'cmsapp.feedbackreportCtrl',
+	'cmsapp.feedbacksupportCtrl',
+	'cmsapp.sendreportCtrl'
 ])
 
 .constant('Constants', {
@@ -90,7 +95,8 @@ angular.module('cmsapp',[
 		view_issue_details_url	: mainUrl + 'issue/view_issue_details',
 		upload_engagedform_url	: mainUrl + 'solution_chaser/upload_engagedform',
 		engagepeople_saved_url	: mainUrl + 'solution_chaser/engagepeople_savedata',
-		save_accessinfo_url		: mainUrl + 'accsessinfo/save_accessinfo'
+		save_accessinfo_url		: mainUrl + 'accsessinfo/save_accessinfo',
+		save_feedback_url		: mainUrl + 'feedback/save_feedback' 
     },
 
     API_HEADERS: {
@@ -412,7 +418,9 @@ angular.module('cmsapp',[
 	    url: '/analyzeissued',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/analyze-issued.html'
+	        templateUrl: 'templates/analyze-issued.html',
+	        controller : 'analyzeissuedCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -420,7 +428,9 @@ angular.module('cmsapp',[
 	    url: '/feedbackreport',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/feedback-report.html'
+	        templateUrl: 'templates/feedback-report.html',
+	        controller : 'feedbackreportCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -428,7 +438,9 @@ angular.module('cmsapp',[
 	    url: '/previewfeedbackreport',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/preview-feedback-report.html'
+	        templateUrl: 'templates/preview-feedback-report.html',
+	        controller : 'previewreportCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -436,7 +448,8 @@ angular.module('cmsapp',[
 	    url: '/feedbacksupport',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/feedback-support.html'
+	        templateUrl: 'templates/feedback-support.html',
+	        controller : 'feedbacksupportCtrl'
 	      }
 	    }
 	  })
@@ -444,7 +457,9 @@ angular.module('cmsapp',[
 	    url: '/sendreport',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/send-report.html'
+	        templateUrl: 'templates/send-report.html',
+	        controller : 'sendreportCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })

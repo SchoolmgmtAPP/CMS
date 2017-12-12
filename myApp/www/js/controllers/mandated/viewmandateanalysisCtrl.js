@@ -43,3 +43,8 @@ angular.module('cmsapp.viewmandateanalysisCtrl', [])
 		$scope.masers_answer = $rootScope.masers_answer;
 		console.log($scope.masers_answer);
 });
+
+
+
+
+
