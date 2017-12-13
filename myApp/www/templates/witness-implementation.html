@@ -8,19 +8,22 @@
 					
 						<label class="item item-input">
 					    	<span class="input-label itemWrap ser_Item">Value of improved service item: PHP</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="temp.sof_service">
 					  	</label>
 					  	<label class="item item-input">
 					    	<span class="input-label">Sources of fund:</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="temp.voi_service">
 					  	</label>
 					
 					</div>
 					<h4 class="report">Take photo of contract/agreement:</h4>
 						<img src="img/photo-camera.png" class="photoImg reportImg">
-					<button class="button button-energized button-block sign_btn">
+					<h4 class="report">Take photo of contract/agreement:</h4>
+						<img src="img/photo-camera.png" class="photoImg reportImg">
+					<button class="button button-energized button-block sign_btn" ng-click="save()">
 			  		Save
 				</button>
+				<input type="file" id="fileinput" name="file" ng-model="files" on-file-change="onSelected" />
 				</form>
 				</div>
 			</div>

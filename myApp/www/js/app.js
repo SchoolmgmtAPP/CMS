@@ -50,7 +50,15 @@ angular.module('cmsapp',[
 	'cmsapp.previewreportCtrl',
 	'cmsapp.feedbackreportCtrl',
 	'cmsapp.feedbacksupportCtrl',
-	'cmsapp.sendreportCtrl'
+	'cmsapp.sendreportCtrl',
+	'cmsapp.reportstampedCtrl',
+	'cmsapp.acknowledgeissueCtrl',
+	'cmsapp.governmentagreeCtrl',
+	'cmsapp.shareagreedsolutionCtrl',
+	'cmsapp.witnessimplementationCtrl',
+	'cmsapp.followupCtrl',
+	'cmsapp.changestoryCtrl',
+	'cmsapp.storyServices'
 ])
 
 .constant('Constants', {
@@ -96,7 +104,14 @@ angular.module('cmsapp',[
 		upload_engagedform_url	: mainUrl + 'solution_chaser/upload_engagedform',
 		engagepeople_saved_url	: mainUrl + 'solution_chaser/engagepeople_savedata',
 		save_accessinfo_url		: mainUrl + 'accsessinfo/save_accessinfo',
-		save_feedback_url		: mainUrl + 'feedback/save_feedback' 
+		save_feedback_url		: mainUrl + 'feedback/save_feedback',
+		acknowledge_issue_url	: mainUrl + 'resolve_issue/acknowledge_issue',
+		acknowledge_upload_url	: mainUrl + 'resolve_issue/acknowledge_upload',
+		agree_on_issue_url		: mainUrl + 'resolve_issue/agree_on_issue',
+		witness_implementation_url:mainUrl+ 'resolve_issue/witness_implementation',
+		send_followup_url		: mainUrl + 'resolve_issue/send_followup',
+		save_story_url			: mainUrl + 'story_issue/save_story',
+		send_story_url			: mainUrl + 'story_issue/send_story'    
     },
 
     API_HEADERS: {
@@ -470,7 +485,9 @@ angular.module('cmsapp',[
 	    url: '/reportstamped',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/report-stamped.html'
+	        templateUrl: 'templates/report-stamped.html',
+	        controller : 'reportstampedCtrl',
+	        cache		: false
 	      }
 	    }
 	  })
@@ -478,7 +495,9 @@ angular.module('cmsapp',[
 	    url: '/acknowledgeissue',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/acknowledge-issue.html'
+	        templateUrl: 'templates/acknowledge-issue.html',
+	        controller : 'acknowledgeissueCtrl',
+	        cache	   : false
 	      }
 	    }
 	  })
@@ -486,7 +505,9 @@ angular.module('cmsapp',[
 	    url: '/governmentagree',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/government-agree.html'
+	        templateUrl: 'templates/government-agree.html',
+	        controller : 'governmentagreeCtrl',
+	        cache		: false
 	      }
 	    }
 	  })
@@ -494,7 +515,9 @@ angular.module('cmsapp',[
 	    url: '/shareagreedsolution',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/share-agreed-solution.html'
+	        templateUrl: 'templates/share-agreed-solution.html',
+	        controller : 'shareagreedsolutionCtrl',
+	        cache		: false
 	      }
 	    }
 	  })
@@ -502,7 +525,8 @@ angular.module('cmsapp',[
 	    url: '/followup',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/follow-up.html'
+	        templateUrl: 'templates/follow-up.html',
+	        controller : 'followupCtrl'
 	      }
 	    }
 	  })
@@ -510,7 +534,8 @@ angular.module('cmsapp',[
 	    url: '/witnessimplementation',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/witness-implementation.html'
+	        templateUrl: 'templates/witness-implementation.html',
+	        controller : 'witnessimplementationCtrl'
 	      }
 	    }
 	  })
@@ -518,7 +543,8 @@ angular.module('cmsapp',[
 	    url: '/changestory',
 	    views: {
 	      'menuContent': {
-	        templateUrl: 'templates/change-story.html'
+	        templateUrl: 'templates/change-story.html',
+	        controller : 'changestoryCtrl'
 	      }
 	    }
 	  })

@@ -243,6 +243,106 @@ angular.module('cmsapp.issueServices', [])
         }).error(function (response) {
             console.log(response);
         });
+      },
+    acknowledge_issue: function(data1){
+     return $http({
+          url:Constants.API_URL['acknowledge_issue_url'],
+          method: "POST",
+          headers: {
+                    'Content-Type': Constants.API_HEADERS['content_type']
+                },
+          transformRequest: function(obj) {
+                            var str = [];
+                            for(var p in obj)
+                                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                            return str.join("&");
+                        },
+            data : data1
+          }).success(function (response) {
+            console.log(response);
+        }).error(function (response) {
+            console.log(response);
+        });
+      },
+    acknowledge_upload: function(data1){
+     return $http({
+          url:Constants.API_URL['acknowledge_upload_url'],
+          method: "POST",
+          headers: {
+                    'Content-Type': Constants.API_HEADERS['content_type']
+                },
+          transformRequest: function(obj) {
+                            var str = [];
+                            for(var p in obj)
+                                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                            return str.join("&");
+                        },
+            data : data1
+          }).success(function (response) {
+            console.log(response);
+        }).error(function (response) {
+            console.log(response);
+        });
+      },
+    agree_on_issue: function(data1){
+     return $http({
+          url:Constants.API_URL['agree_on_issue_url'],
+          method: "POST",
+          headers: {
+                    'Content-Type': Constants.API_HEADERS['content_type']
+                },
+          transformRequest: function(obj) {
+                            var str = [];
+                            for(var p in obj)
+                                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                            return str.join("&");
+                        },
+            data : data1
+          }).success(function (response) {
+            console.log(response);
+        }).error(function (response) {
+            console.log(response);
+        });
+      },
+    witness_implementation: function(data1){
+     return $http({
+          url:Constants.API_URL['witness_implementation_url'],
+          method: "POST",
+          headers: {
+                    'Content-Type': Constants.API_HEADERS['content_type']
+                },
+          transformRequest: function(obj) {
+                            var str = [];
+                            for(var p in obj)
+                                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                            return str.join("&");
+                        },
+            data : data1
+          }).success(function (response) {
+            console.log(response);
+        }).error(function (response) {
+            console.log(response);
+        });
+      },
+    send_followup: function(data1){
+     return $http({
+          url:Constants.API_URL['send_followup_url'],
+          method: "POST",
+          headers: {
+                    'Content-Type': Constants.API_HEADERS['content_type']
+                },
+          transformRequest: function(obj) {
+                            var str = [];
+                            for(var p in obj)
+                                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                            return str.join("&");
+                        },
+            data : data1
+          }).success(function (response) {
+            console.log(response);
+        }).error(function (response) {
+            console.log(response);
+        });
       }
 	}
 });

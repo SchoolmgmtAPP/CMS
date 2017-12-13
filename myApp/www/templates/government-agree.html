@@ -16,19 +16,20 @@
 						</ion-radio>
 						<label class="item item-input">
 					    	<span class="input-label itemWrap ser_Item">Monetary value of monitored service item: PHP</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="temp.monitory_value">
 					  	</label>
 					  	<label class="item item-input">
 					    	<span class="input-label">Sources of fund:</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="temp.source_fund">
 					  	</label>
 					</ion-list>
 					</div>
 					<h4 class="report">Upload copy of agreement.</h4>
 						<img src="img/report.png" class="photoImg reportImg">
-					<button class="button button-energized button-block sign_btn">
+					<button class="button button-energized button-block sign_btn" ng-click="save(choice)">
 			  		Save
 				</button>
+					<input type="file" id="fileinput" name="file" ng-model="files" on-file-change="onSelected" />
 				</form>
 				</div>
 			</div>

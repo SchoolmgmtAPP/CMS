@@ -3,7 +3,25 @@
 		<div class="row responsive-sm ContentPad">
 			<div class="col idenCol">
 				<p class="padBottom">Guide in writing story of change...</p>
-				
+					<div class="row">
+						<textarea ng-model="data.story" style="border: 1px solid;width: -webkit-fill-available">
+							
+						</textarea>
+					</div>
+
+					
+					<div class="row">
+						<div class="col col-50">
+							<button class="button button-block sign_btn solution" ng-click="send()" ng-disabled="data.needtoshow" >
+			  				Send
+							</button>
+						</div>
+						<div class="col col-50">
+							<button class="button button-energized button-block sign_btn later" ng-click="save()">
+						  		Save
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

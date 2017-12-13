@@ -6,9 +6,9 @@
 				<form ng-submit="">
 				<div class="padBottom">
 					<ion-list>
-						<ion-radio ng-model="choice" ng-value="'Email'">Email</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'Hand-carry'">Hand-carry</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'Other means'">Other means
+						<ion-radio ng-model="choice" name="choice"  ng-value="'Email'">Email</ion-radio>
+						<ion-radio ng-model="choice" name="choice" ng-value="'Hand-carry'">Hand-carry</ion-radio>
+						<ion-radio ng-model="choice" name="choice" ng-value="'Other means'">Other means
 						</ion-radio>
 					</ion-list>
 				</div>
@@ -16,21 +16,22 @@
 					<p class="padBottom">Note that the government office must explicitly acknowledge the issue. That it exists and they will do something about it.</p>
 					<div class="padBottom">
 					<ion-list>
-						<ion-radio ng-model="choice" ng-value="'Email'">Email</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'Text'">Text</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'Printed letter'">Printed letter
+						<ion-radio ng-model="choice2" name="choice2" ng-value="'Email'">Email</ion-radio>
+						<ion-radio ng-model="choice2" name="choice2" ng-value="'Text'">Text</ion-radio>
+						<ion-radio ng-model="choice2" name="choice2" ng-value="'Printed letter'">Printed letter
 						</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'Audio recording'">Audio recording
+						<ion-radio ng-model="choice2" name="choice2" ng-value="'Audio recording'">Audio recording
 						</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'Audio recording'">Minutes of meeting
+						<ion-radio ng-model="choice2" name="choice2" ng-value="'Minutes of meeting'">Minutes of meeting
 						</ion-radio>
 					</ion-list>
 					</div>
 					<h4 class="report">Upload copy of acknowledgment message.</h4>
 						<img src="img/report.png" class="photoImg reportImg">
-					<button class="button button-energized button-block sign_btn">
+				<button class="button button-energized button-block sign_btn" ng-click="save(choice,choice2)">
 			  		Save
 				</button>
+				<input type="file" id="fileinput" name="file" ng-model="files" on-file-change="onSelected" />
 				</form>
 				</div>
 			</div>
