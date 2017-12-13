@@ -1,7 +1,7 @@
 {
-  "name": "myapp",
+  "name": "cmsapp",
   "version": "1.1.1",
-  "description": "myApp: An Ionic project",
+  "description": "cmsapp: An Ionic project",
   "devDependencies": {
     "gulp": "^3.5.6",
     "gulp-clean-css": "^3.7.0",
@@ -16,15 +16,8 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [
-    "android"
-  ],
+  "cordovaPlatforms": [],
   "dependencies": {
-    "cordova-plugin-camera": "^3.0.0"
-  },
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-camera": {}
-    }
+    "android-versions": "^1.2.1"
   }
 }
