@@ -10,7 +10,7 @@ angular.module('cmsapp.changestoryCtrl', [])
 
 		var data ={
 			user_id		: localStorage.getItem('user_id'),
-			story_id 	: $rootScope.issue_story.story_id
+			story_id 	: $scope.story_id
 		}
 		storyServices.send_story(data).then(function(resonse){
 			$rootScope.loadingOff();
@@ -28,8 +28,10 @@ angular.module('cmsapp.changestoryCtrl', [])
 		storyServices.save_story(data).then(function(resonse){
 			$rootScope.loadingOff();
 			console.log(resonse);
+
 			if (resonse.data.success == 'true') {
 				$scope.data.needtoshow = false;
+				$scope.story_id =  resonse.data.story_id;
 			}
 		});
 	}

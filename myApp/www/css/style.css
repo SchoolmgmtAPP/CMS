@@ -891,3 +891,11 @@ a {
 input[type="file"] {
     display: none;
 }
+.secondClass{
+    margin-top: 3px;
+    color: #1E307E;
+    font-size: 19px;
+  }
+.firstClass{
+      margin-right: 15px;
+}

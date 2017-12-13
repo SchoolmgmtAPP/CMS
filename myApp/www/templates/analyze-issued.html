@@ -6,17 +6,17 @@
 				
 				<div class="padBottom">
 					<ion-list>
-						<div class = " item item-divider">
+						<div class = "item item-divider">
 					      How long has issue been existing?
 					   	</div>
-						<ion-radio ng-model="choice" ng-value="'less than 6 months'">Less than 6 months</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'less than 1 year'">Less than 1 year</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'1-5 years'">1-5 years</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'5-10 years'">5-10 years</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'over 10 years'">Over 10 years</ion-radio>
+						<ion-radio ng-model="data.issue_exist_from" name="a1" ng-value="'less than 6 months'">Less than 6 months</ion-radio>
+						<ion-radio ng-model="data.issue_exist_from" name="a1" ng-value="'less than 1 year'">Less than 1 year</ion-radio>
+						<ion-radio ng-model="data.issue_exist_from" name="a1" ng-value="'1-5 years'">1-5 years</ion-radio>
+						<ion-radio ng-model="data.issue_exist_from" name="a1" ng-value="'5-10 years'">5-10 years</ion-radio>
+						<ion-radio ng-model="data.issue_exist_from" name="a1" ng-value="'over 10 years'">Over 10 years</ion-radio>
 						<label class="item item-input">
 					    	<span class="input-label">Sources/s:</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="data.issue_exist_from_source">
 					  	</label>
 					</ion-list>
 				</div>
@@ -25,12 +25,12 @@
 						<div class = " item item-divider">
 					      How severe is it?
 					   	</div>
-						<ion-radio ng-model="choice" ng-value="'low'">Low</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'medium'">Medium</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'high'">High</ion-radio>
+						<ion-radio ng-model="data.server_type" name="a2" ng-value="'low'">Low</ion-radio>
+						<ion-radio ng-model="data.server_type" name="a2" ng-value="'medium'">Medium</ion-radio>
+						<ion-radio ng-model="data.server_type" name="a2" ng-value="'high'">High</ion-radio>
 						<label class="item item-input">
 					    	<span class="input-label">Sources/s:</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="data.server_type_source">
 					  	</label>
 					</ion-list>
 				</div>
@@ -79,7 +79,7 @@
 					   	</li>
 					   	<label class="item item-input">
 					    	<span class="input-label">Sources/s:</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="data.effect_on_learners_source">
 					  	</label>
 					</ul>
 				</div>
@@ -88,12 +88,12 @@
 						<div class = " item item-divider itemWrap">
 					      How much attention do stakeholders give to the issue?
 					   	</div>
-						<ion-radio ng-model="choice" ng-value="'low'">Low</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'medium'">Medium</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'high'">High</ion-radio>
+						<ion-radio ng-model="data.attention_received" name="a3" ng-value="'low'">Low</ion-radio>
+						<ion-radio ng-model="data.attention_received" name="a3" ng-value="'medium'">Medium</ion-radio>
+						<ion-radio ng-model="data.attention_received" name="a3" ng-value="'high'">High</ion-radio>
 						<label class="item item-input">
 					    	<span class="input-label">Sources/s:</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="data.attention_received_source">
 					  	</label>
 					</ion-list>
 				</div>
@@ -102,11 +102,11 @@
 						<div class = " item item-divider itemWrap">
 					     Has SH sent report on the issue to other offices?
 					   	</div>
-						<ion-radio ng-model="choice" ng-value="'yes'">Yes</ion-radio>
-						<ion-radio ng-model="choice" ng-value="'no'">No</ion-radio>
+						<ion-radio ng-model="data.is_report_sent" name="a4" ng-value="'Y'">Yes</ion-radio>
+						<ion-radio ng-model="data.is_report_sent" name="a4" ng-value="'N'">No</ion-radio>
 						<label class="item item-input">
 					    	<span class="input-label">Sources/s:</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="data.is_report_sent_source">
 					  	</label>
 					</ion-list>
 				</div>
@@ -167,7 +167,7 @@
 					   	</li>
 					   	<label class="item item-input">
 					    	<span class="input-label">Sources/s:</span>
-					    	<input type="text" class="sourceTxtbx">
+					    	<input type="text" class="sourceTxtbx" ng-model="data.next_steps_source">
 					  	</label>
 					</ul>
 				</div>

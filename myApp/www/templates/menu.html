@@ -33,22 +33,64 @@
     <ion-content>
       <ion-list>
         <ion-item menu-close ng-click="" ui-sref="app.listschools">
-          <img src="img/checkschool.png" class="sideLogo">
+          <div class="row">
+            <div class="firstClass">
+              <img src="img/checkschool.png" class="sideLogo">
+            </div>
+            <div class="col secondClass">
+              Schools
+            </div>
+          </div>
         </ion-item>
         <ion-item menu-close href="#" ui-sref="app.listissues">
-         <img src="img/notifyComment.png" class="sideLogo">
+        <div class="row">
+            <div class="firstClass">
+              <img src="img/notifyComment.png" class="sideLogo">
+            </div>
+            <div class="col secondClass">
+              Issues
+            </div>
+          </div>
         </ion-item>
         <ion-item menu-close href="#" ui-sref="app.searchschool">
-          <img src="img/search.png" class="sideLogo">
+         <div class="row">
+            <div class="firstClass">
+                <img src="img/search.png" class="sideLogo">
+            </div>
+            <div class="col secondClass">
+              Mandate Analysis
+            </div>
+          </div>
         </ion-item>
         <ion-item menu-close href="#" ui-sref="app.ratings">
-          <img src="img/star.png" class="sideLogo">
+         <div class="row">
+            <div class="firstClass">
+                <img src="img/star.png" class="sideLogo">
+            </div>
+            <div class="col secondClass">
+              Rating
+            </div>
+          </div>
         </ion-item>
         <ion-item menu-close ng-click="delete_account()">
-          <i class="sideLogo ion-trash-a delete_logo"></i>
+         <div class="row">
+            <div class="firstClass">
+              <i class="sideLogo ion-trash-a delete_logo"></i>
+            </div>
+            <div class="col secondClass">
+              Delete Account
+            </div>
+          </div>
         </ion-item>
          <ion-item menu-close href="#" ng-click="logout()">
-          <img src="img/logout.png" class="sideLogo">
+          <div class="row">
+            <div class="firstClass">
+              <img src="img/logout.png" class="sideLogo">
+            </div>
+            <div class="col secondClass">
+              Logout
+            </div>
+          </div>
         </ion-item>
       </ion-list>
     </ion-content>
