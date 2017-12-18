@@ -1,9 +1,9 @@
 angular.module('cmsapp.schoolCtrl', [])
-.filter('groupBy', function() {
-    return _.memoize(function(items, field) {
-            return _.groupBy(items, field);
-        });
-})
+// .filter('groupBy', function() {
+//     return _.memoize(function(items, field) {
+//             return _.groupBy(items, field);
+//         });
+// })
 .controller('schoolCtrl', function($scope,$rootScope, $stateParams,
                                     $ionicLoading,$ionicPopup,$state,issueServices) {
    

@@ -14,6 +14,7 @@ angular.module('cmsapp',[
 	'ngStorage',
 	'ui.bootstrap',
 	'ngSanitize',
+	'angular.filter',
 	'cmsapp.chatCtrl',
 	'cmsapp.AppCtrl',
 	'cmsapp.schoolCtrl',

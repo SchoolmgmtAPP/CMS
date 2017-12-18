@@ -1,5 +1,5 @@
 angular.module('cmsapp.listIssueCtrl', [])
-.controller('listIssueCtrl', function($scope, $stateParams,issueServices, $rootScope) {
+.controller('listIssueCtrl', function($scope, $stateParams,issueServices, $rootScope,$filter) {
 
   console.log($stateParams.id);
   $scope.data={};
@@ -28,11 +28,18 @@ angular.module('cmsapp.listIssueCtrl', [])
   	issueServices.get_issue_by_school(data).then(function(res){
   		console.log(res);
   		$scope.issues = res.data.response;
-
-  		 for (var i = $scope.issues.length - 1; i >= 0; i--) {
-  		 	a = $scope.issues[i].added_date.split(" ");
-			// date = a[0];
-			$scope.issues[i].date1 = a[0];
+       var j=1,k=1;
+  		for (var i = $scope.issues.length - 1; i >= 0; i--) {
+  		 	  a = $scope.issues[i].added_date.split(" ");
+			   // date = a[0];
+			   $scope.issues[i].date1 = a[0];
+         $scope.issues[i].groupid=k;
+          j++;
+          if(j>3)
+          {
+            j=1;
+            k++;
+          }
   		 }
   		 console.log($scope.issues);
   	});
@@ -45,9 +52,16 @@ angular.module('cmsapp.listIssueCtrl', [])
       issueServices.get_issue_by_school(data).then(function(res){
         console.log(res);
         $scope.issues = res.data.response;
-
+         var j=1,k=1;
          for (var i = $scope.issues.length - 1; i >= 0; i--) {
           a = $scope.issues[i].added_date.split(" ");
+          $scope.issues[i].groupid=k;
+          j++;
+          if(j>3)
+          {
+            j=1;
+            k++;
+          }
         // date = a[0];
         $scope.issues[i].date1 = a[0];
        }
@@ -56,4 +70,15 @@ angular.module('cmsapp.listIssueCtrl', [])
 
   }
 
+})
+.filter('range', function() {
+  return function(input, total) {
+    total = parseInt(total);
+
+    for (var i=0; i<total; i++) {
+      input.push(i);
+    }
+
+    return input;
+  };
 });

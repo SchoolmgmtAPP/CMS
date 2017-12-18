@@ -75,7 +75,7 @@
 					      	<label class = "checkbox">
 					         	<input type = "checkbox" class="chbox" ng-value="others" ng-model="learner[5]"/>
 					      	</label>
-					      	<input type="text" name="" class="textBox souTbx">
+					      	<input type="text" name="" class="textBox souTbx" ng-model="learner5_value">
 					   	</li>
 					   	<label class="item item-input">
 					    	<span class="input-label">Sources/s:</span>
@@ -125,7 +125,7 @@
 						<li class = "item item-checkbox checkbox-energized checkBox">
 					      	Pursue identified mandated agency
 					      	<label class = "checkbox">
-					         	<input type = "checkbox" class="chbox" ng-model="step[1]" ng-value="'need more info'"/>
+					         	<input type = "checkbox" class="chbox" ng-model="step[1]" ng-value="'pursue identified mandated agency'"/>
 					      	</label>
 					   	</li>
 						<li class = "item item-checkbox checkbox-energized checkBox">
@@ -163,7 +163,7 @@
 					      	<label class = "checkbox">
 					         	<input type = "checkbox" class="chbox" ng-model="step[7]" ng-value="'others'"/>
 					      	</label>
-					      	<input type="text" name="" class="textBox souTbx">
+					      	<input type="text" name="" class="textBox souTbx" ng-model="stpe7_value">
 					   	</li>
 					   	<label class="item item-input">
 					    	<span class="input-label">Sources/s:</span>
@@ -171,7 +171,7 @@
 					  	</label>
 					</ul>
 				</div>
-				<button class="button button-energized button-block sign_btn">
+				<button class="button button-energized button-block sign_btn" ng-click="save(data.issue_exist_from,data.server_type,data.is_report_sent,data.attention_received)">
 			  		Save
 				</button>
 			</div>	

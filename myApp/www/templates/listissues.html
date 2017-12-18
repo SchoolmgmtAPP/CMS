@@ -16,10 +16,10 @@
 	  		
 		</div>
 		<hr>
-  		<div class="row">
-  			<div class="col col-33 imgCol imgCol" ng-repeat="i in issues" ui-sref="app.viewissue({'issue_id':i.issue_id})">
+  		<div class="row" ng-repeat="issue in issues | groupBy : 'groupid'">
+  			<div class="col col-33 imgCol imgCol" ng-repeat="i in issue" ui-sref="app.viewissue({'issue_id':i.issue_id})">
   				<img src="img/issue1.png" class="issueImg">
-  				<label>{{i.date1 | date:"M/d/yyyy"}}</label>
+  				<label>{{i.date1 | date:"d/M/yyyy"}}</label>
   			</div>
   			
   		</div>
